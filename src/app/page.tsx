@@ -1,3 +1,4 @@
+import ExampleComponent from "@/components/example/ExampleComponent";
 import Header from "@/components/header";
 
 const Page: React.FC = () => {
@@ -6,6 +7,7 @@ const Page: React.FC = () => {
       <Header />
       <h1>Hello, World!</h1>
       {/* Your content here */}
+      <ExampleComponent />
     </div>
   );
 };

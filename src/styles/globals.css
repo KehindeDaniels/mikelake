@@ -1,8 +1,21 @@
+/* src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html.dark {
-  background-color: #1a202c; /* Tailwind's dark bg color */
-  color: white;
+.gradient-text {
+  background: linear-gradient(
+    89deg,
+    #9845e8 3.33%,
+    #33d2ff 43.52%,
+    #dd5789 76.47%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: -0.5px;
 }

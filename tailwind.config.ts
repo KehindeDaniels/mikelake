@@ -9,8 +9,42 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)", "sans-serif"],
+        manrope: ["var(--font-manrope)", "sans-serif"],
+        worksans: ["var(--font-work-sans)", "sans-serif"],
+      },
+      colors: {
+        light: {
+          DEFAULT: "#ffffff",
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          300: "#d1d5db",
+          600: "#f9fafb",
+          900: "#f9fafb",
+          linear: "#f9fafb",
+          blur: "#154EEA",
+          glassmorphism: "rgba(255, 255, 255, 0.8)",
+          textGradient:
+            "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
+        },
+        dark: {
+          DEFAULT: "#030712",
+          cardBackground: "#080E1F",
+          50: "#111827",
+          100: "#1f2937",
+          300: "#4b5563",
+          600: "#4b5563",
+          900: "#111827",
+          linear: "#f9fafb",
+          glassmorphism: "rgba(0, 0, 0, 0.8)",
+        },
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-radial":
+          "radial-gradient(circle at center, #4E8AFF 0%, #030712 100%)",
+        "gradient-linear":
+          "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
@@ -18,4 +52,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;
