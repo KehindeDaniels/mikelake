@@ -47,6 +47,19 @@ const config: Config = {
           "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-text":
+          "linear-gradient(89deg, #9845E8 3.33%, #33D2FF 43.52%, #DD5789 76.47%)",
+        "header-dark":
+          "radial-gradient(100% 100% at 50.1% 100%, rgba(78, 138, 255, 0.2) 0%, rgba(78, 138, 255, 0) 100%), #030712",
+        "header-light":
+          "radial-gradient(100% 100% at 50.1% 100%, rgba(5, 44, 119, 0.5) 0%, rgba(78, 138, 255, 0) 100%)",
+        "mobile-header-dark": "rgba(110, 141, 210, 0.1)",
+        "mobile-header-light": "var(--White, #fff)",
+      },
+      boxShadow: {
+        "mobile-header-dark": "0px 4px 4px 0px rgba(50, 50, 71, 0.08)",
+        "mobile-header-light":
+          "0px 2px 2px 0px rgba(50, 50, 71, 0.06), 0px 2px 4px 0px rgba(50, 50, 71, 0.06)",
       },
     },
   },

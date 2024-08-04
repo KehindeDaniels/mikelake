@@ -39,3 +39,19 @@
     )
   );
 }
+
+.mobile-header-dark {
+  border-radius: 0.5rem;
+  background: rgba(110, 141, 210, 0.1);
+  box-shadow: 0px 4px 4px 0px rgba(50, 50, 71, 0.08);
+  /* backdrop-filter: blur(20px); */
+}
+
+.mobile-header-light {
+  border: 0.5px solid var(--grey-dark-10055, rgba(31, 41, 55, 0.7));
+  background: var(--White, #fff);
+
+  /* Card 3 */
+  box-shadow: 0px 2px 2px 0px rgba(50, 50, 71, 0.06),
+    0px 2px 4px 0px rgba(50, 50, 71, 0.06);
+}
