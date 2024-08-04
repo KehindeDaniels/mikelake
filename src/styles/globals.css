@@ -19,3 +19,23 @@
   line-height: 70px;
   letter-spacing: -0.5px;
 }
+
+.header-dark {
+  background: radial-gradient(
+      100% 100% at 50.1% 100%,
+      rgba(78, 138, 255, 0.2) 0%,
+      rgba(78, 138, 255, 0) 100%
+    ),
+    var(--Gray-Dark-Default, #030712);
+}
+
+.header-light {
+  background: var(
+    --Background-2,
+    radial-gradient(
+      100% 100% at 50.1% 100%,
+      rgba(5, 44, 119, 0.5) 0%,
+      rgba(78, 138, 255, 0) 100%
+    )
+  );
+}

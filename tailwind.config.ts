@@ -15,20 +15,20 @@ const config: Config = {
         worksans: ["var(--font-work-sans)", "sans-serif"],
       },
       colors: {
-        light: {
+        dark: {
           DEFAULT: "#ffffff",
           50: "#f9fafb",
           100: "#f3f4f6",
           300: "#d1d5db",
           600: "#f9fafb",
           900: "#f9fafb",
-          linear: "#f9fafb",
+          1000: "#111827",
           blur: "#154EEA",
           glassmorphism: "rgba(255, 255, 255, 0.8)",
           textGradient:
             "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
         },
-        dark: {
+        light: {
           DEFAULT: "#030712",
           cardBackground: "#080E1F",
           50: "#111827",
@@ -36,7 +36,7 @@ const config: Config = {
           300: "#4b5563",
           600: "#4b5563",
           900: "#111827",
-          linear: "#f9fafb",
+          1000: "#f9fafb",
           glassmorphism: "rgba(0, 0, 0, 0.8)",
         },
       },
