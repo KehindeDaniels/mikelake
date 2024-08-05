@@ -82,7 +82,7 @@ const Header: React.FC = () => {
         <div className="fixed bg-dark-1000 inset-y-0 right-0 left-1/4 z-50 py-8">
           <div
             onClick={toggleMenu}
-            className="sm:hidden relative h-6 w-6 ml-2 flex justify-center items-center z-[100000]"
+            className="sm:hidden relative h-6 w-6 ml-4 flex justify-center items-center z-[100000]"
           >
             <Image
               className="w-28"
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
           </div>
 
           <ul className="border-y-[1px] mt-6 border-dark-300 border-opacity-10">
-            <div className="flex flex-col items-start gap-4 px-2 py-4">
+            <div className="flex flex-col items-start gap-4 px-4 py-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
               <ThemeSwitch />
             </div>
           </div>
-          <div className="grid px-2 mt-4 font-bold">
+          <div className="grid px-4 mt-4 font-bold">
             <button className="bg-light-1000 text-dark-1000 px-4 py-1 rounded-xl">
               Download CV
             </button>
