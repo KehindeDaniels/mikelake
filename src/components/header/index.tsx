@@ -25,7 +25,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 py-4 sm:py-0">
+      <header className="sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 dark:border-opacity-20 py-4 sm:py-0">
         <nav className="mobile-header-dark max-w-[90%] sm:max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
           {/* logo */}
           <div>

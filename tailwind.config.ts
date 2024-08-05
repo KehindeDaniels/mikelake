@@ -43,6 +43,8 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial":
           "radial-gradient(circle at center, #4E8AFF 0%, #030712 100%)",
+        "gradient-hero":
+          "radial-gradient(100% 100% at 50% 0%, rgba(78, 138, 255, 0.20) 0%, rgba(78, 138, 255, 0.00) 100%), var(--Gray-Dark-Default, #030712);",
         "gradient-linear":
           "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
         "gradient-conic":
