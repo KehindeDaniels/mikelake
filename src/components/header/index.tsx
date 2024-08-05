@@ -22,12 +22,13 @@ const Header: React.FC = () => {
     { label: "Log in", url: "/signin" },
     { label: "Start free trial", url: "/signup" },
   ];
+
   return (
     <>
-      <header className=" sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 py-4 sm:py-0">
-        <nav className="mobile-header-dark max-w-[90%] sm:max-w-7xl  mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8  h-12 sm:h-16">
+      <header className="sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 py-4 sm:py-0">
+        <nav className="mobile-header-dark max-w-[90%] sm:max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
           {/* logo */}
-          <div className="">
+          <div>
             <Image
               className="w-28"
               src={logo}
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
             <ul className="hidden sm:flex gap-6">
               {navLinks.map((link) => (
                 <a
-                  key={link.url}
+                  key={link.label}
                   href={link.url}
                   className="text-light-300 dark:text-dark-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium"
                 >
@@ -50,16 +51,18 @@ const Header: React.FC = () => {
                 </a>
               ))}
             </ul>
-            <div className="flex items-center justify-center gap-4 ">
-              <ThemeSwitch />
-              <button className="hidden sm:flex bg-dark-1000 dark:bg-light-1000 text-light-1000 dark:text-dark-1000 px-4 py-1 rounded-xl">
+            <div className="flex items-center justify-center gap-4">
+              <div className="text-2xl">
+                <ThemeSwitch />
+              </div>
+              <button className="hidden sm:flex bg-dark-1000 dark:bg-light-1000 text-light-1000 dark:text-dark-1000 px-4 py-2 rounded-xl">
                 Download CV
               </button>
 
               {/* hamburger */}
               <div
                 onClick={toggleMenu}
-                className="sm:hidden relative h-6 w-6   flex justify-center items-center z-50 "
+                className="sm:hidden relative h-6 w-6 flex justify-center items-center z-50"
               >
                 <div className="w-3/4 h-0.5 bg-light-100 dark:bg-dark-100 rounded-full absolute -translate-y-1.5" />
                 <div className="w-3/4 h-0.5 bg-light-100 dark:bg-dark-100 rounded-full absolute" />
@@ -70,50 +73,52 @@ const Header: React.FC = () => {
         </nav>
       </header>
       {/* Mobile Nav */}
-      {isOpen && (
-        <nav className=" ">
-          <div className="overlay inset-0 fixed bg-dark-blur dark:bg-dark-1000 opacity-30"></div>
-          <div className="fixed bg-dark-1000 inset-y-0 right-0 left-1/4 z-50 py-8">
-            <div
-              onClick={toggleMenu}
-              className="sm:hidden relative h-6 w-6  ml-2  flex justify-center items-center z-[100000] "
-            >
-              <Image
-                className="w-28 "
-                src={close}
-                alt="Logo"
-                width={30}
-                height={30}
-              />
-            </div>
+      <nav
+        className={`fixed inset-0 z-50  transition-transform duration-300 transform ${
+          isOpen ? "slide-in" : "slide-out"
+        }`}
+      >
+        <div className="overlay inset-0 fixed bg-dark-blur dark:bg-dark-1000 opacity-40"></div>
+        <div className="fixed bg-dark-1000 inset-y-0 right-0 left-1/4 z-50 py-8">
+          <div
+            onClick={toggleMenu}
+            className="sm:hidden relative h-6 w-6 ml-2 flex justify-center items-center z-[100000]"
+          >
+            <Image
+              className="w-28"
+              src={close}
+              alt="Close"
+              width={30}
+              height={30}
+            />
+          </div>
 
-            <ul className="border-y-[1px] mt-6  border-dark-300 border-opacity-10 ">
-              <div className="flex flex-col items-start gap-4 px-2 py-4 ">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.url}
-                    href={link.url}
-                    className="text-dark-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </ul>
-            <div className="theme flex justify-between items-center px-4 pt-6">
-              <p className="text-dark-300">Switch Theme</p>
-              <div className="text-white">
-                <ThemeSwitch />
-              </div>
+          <ul className="border-y-[1px] mt-6 border-dark-300 border-opacity-10">
+            <div className="flex flex-col items-start gap-4 px-2 py-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  className="text-dark-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
-            <div className="grid px-2 mt-4 font-bold">
-              <button className=" bg-light-1000 text-dark-1000 px-4 py-1 rounded-xl">
-                Download CV
-              </button>
+          </ul>
+          <div className="theme flex justify-between items-center px-4 pt-6">
+            <p className="text-dark-300">Switch Theme</p>
+            <div className="text-white text-2xl">
+              <ThemeSwitch />
             </div>
           </div>
-        </nav>
-      )}
+          <div className="grid px-2 mt-4 font-bold">
+            <button className="bg-light-1000 text-dark-1000 px-4 py-1 rounded-xl">
+              Download CV
+            </button>
+          </div>
+        </div>
+      </nav>
     </>
   );
 };
