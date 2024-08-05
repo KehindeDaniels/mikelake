@@ -80,3 +80,14 @@
 .slide-out {
   animation: slideOut 0.3s forwards;
 }
+
+.hero-bg {
+  background: url("/background.png") lightgray 0% 0% / 100px 100px repeat,
+    radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(78, 138, 255, 0.2) 0%,
+      rgba(78, 138, 255, 0) 100%
+    ),
+    var(--Gray-Dark-Default, #030712);
+  background-blend-mode: plus-darker, normal, normal;
+}

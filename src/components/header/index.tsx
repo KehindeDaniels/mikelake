@@ -74,7 +74,7 @@ const Header: React.FC = () => {
       </header>
       {/* Mobile Nav */}
       <nav
-        className={`fixed inset-0 z-50  transition-transform duration-300 transform ${
+        className={`fixed inset-0 z-[10000]  transition-transform duration-300 transform ${
           isOpen ? "slide-in" : "slide-out"
         }`}
       >

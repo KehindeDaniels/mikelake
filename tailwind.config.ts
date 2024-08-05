@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      blur: {
+        custom: "113.0999984741211px",
+        custom2: "250.0999984741211px",
+      },
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
         manrope: ["var(--font-manrope)", "sans-serif"],
@@ -24,6 +28,7 @@ const config: Config = {
           900: "#f9fafb",
           1000: "#111827",
           blur: "#154EEA",
+          // blurer: "#154EEA",
           glassmorphism: "rgba(255, 255, 255, 0.8)",
           textGradient:
             "linear-gradient(90deg, #9845EB 0%, #33D2FF 55%, #DD5798 100%)",
