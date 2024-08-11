@@ -18,14 +18,10 @@ const Header: React.FC = () => {
     { label: "Work", url: "#" },
     { label: "Contact", url: "#" },
   ];
-  const actionButtons = [
-    { label: "Log in", url: "/signin" },
-    { label: "Start free trial", url: "/signup" },
-  ];
 
   return (
     <>
-      <header className="sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 dark:border-opacity-20 py-4 sm:py-0">
+      <header className="sticky top-0 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-dark-glassmorphism dark:border-dark-300 dark:border-opacity-20 py-4 sm:py-0 z-50">
         <nav className="mobile-header-dark max-w-[90%] sm:max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
           {/* logo */}
           <div>
@@ -72,9 +68,10 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </header>
+
       {/* Mobile Nav */}
       <nav
-        className={`fixed inset-0 z-[10000]  transition-transform duration-300 transform ${
+        className={`fixed inset-0 z-[10000] transition-transform duration-300 transform ${
           isOpen ? "slide-in" : "slide-out"
         }`}
       >
