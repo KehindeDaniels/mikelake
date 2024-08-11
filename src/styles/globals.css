@@ -13,11 +13,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 64px;
+  /* font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: 70px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.5px; */
 }
 
 .header-dark {

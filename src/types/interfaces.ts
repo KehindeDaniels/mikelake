@@ -7,7 +7,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image?: string;
+  image: string;
   link?: string;
   tags: string[];
   type: ProjectType;

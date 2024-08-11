@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
       "Proxy provider website including authentication, dashboard and dynamic features.",
     image: "/images/featured.jpg",
     link: "https://example.com",
-    tags: ["Sketch", "Figma", "Styled Components"],
+    tags: ["Sketch-", "Figma-", "Styled Components"],
     type: ProjectType.Featured,
   },
   {
@@ -39,7 +39,7 @@ export const projectsData: Project[] = [
     description: "Personal portfolio website showcasing work and skills.",
     image: "/images/featured.jpg",
     link: "https://example.com",
-    tags: ["Next.js", "Tailwind CSS"],
+    tags: ["Next.js-", "Tailwind CSS"],
     type: ProjectType.Featured,
   },
   {
@@ -84,7 +84,7 @@ export const projectsData: Project[] = [
     description: "A highly optimized and responsive landing page.",
     image: "/images/featured.jpg",
     link: "https://example.com",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML-", "CSS-", "JavaScript"],
     type: ProjectType.Featured,
   },
   {

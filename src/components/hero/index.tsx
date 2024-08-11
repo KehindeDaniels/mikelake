@@ -15,7 +15,9 @@ const Hero: React.FC = () => {
         <div className="text-center md:text-left flex-1 flex flex-col items-center sm:items-start ">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight z-50">
             Hi, I am <br />
-            <span className="gradient-text">Michael Adeleke</span>
+            <span className="gradient-text text-6xl font-bold leading-[70px]">
+              Michael Adeleke
+            </span>
           </h1>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 z-50 sm:z-0">
             A Product Designer
