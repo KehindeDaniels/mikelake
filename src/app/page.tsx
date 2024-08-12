@@ -4,6 +4,7 @@ import Hero from "@/components/hero";
 import FeaturedProjects from "@/components/featuredProjects";
 import SelectedProjects from "@/components/selectedProjects";
 import AboutMe from "@/components/aboutMe";
+import Skills from "@/components/skills";
 
 const Page: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Page: React.FC = () => {
         <FeaturedProjects />
         <SelectedProjects />
         <AboutMe />
+        <Skills />
       </div>
     </div>
   );
