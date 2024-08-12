@@ -20,7 +20,7 @@ const FeaturedProjects: React.FC = () => {
         {featuredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-dark-1000 p-4 rounded-lg shadow-lg"
+            className="dark:bg-dark-1000 bg-light-1000 p-4 rounded-lg shadow-lg text-light-50 dark:text-dark-50"
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <Image
@@ -30,10 +30,8 @@ const FeaturedProjects: React.FC = () => {
                 height={300}
                 className="w-full h-48 object-cover rounded-lg"
               />
-              <h3 className="mt-4 text-xl font-normal text-dark-100">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-dark-300 font-light">
+              <h3 className="mt-4 text-xl font-normal ">{project.title}</h3>
+              <p className="mt-2  font-light">
                 {project.description.map((descriptions, index) => (
                   <span key={index}>{descriptions.text}</span>
                 ))}

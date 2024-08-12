@@ -5,6 +5,7 @@ import FeaturedProjects from "@/components/featuredProjects";
 import SelectedProjects from "@/components/selectedProjects";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
+import Footer from "@/components/footer";
 
 const Page: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Page: React.FC = () => {
         <SelectedProjects />
         <AboutMe />
         <Skills />
+        <Footer />
       </div>
     </div>
   );
