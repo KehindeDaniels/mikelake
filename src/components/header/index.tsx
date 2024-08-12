@@ -14,9 +14,9 @@ const Header: React.FC = () => {
   const open = "/open.svg";
   const close = "/close.svg";
   const navLinks = [
-    { label: "About", url: "#" },
-    { label: "Work", url: "#" },
-    { label: "Contact", url: "#" },
+    { label: "About", url: "/#about" },
+    { label: "Work", url: "/#work" },
+    { label: "Contact", url: "/#contact" },
   ];
 
   return (

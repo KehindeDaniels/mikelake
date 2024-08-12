@@ -5,7 +5,10 @@ import React from "react";
 const AboutMe: React.FC = () => {
   const src = "/images/about.png";
   return (
-    <div className="font-manrope project text-light-900 dark:text-dark-900 py-16 px-5 md:px-10  mx-auto ">
+    <div
+      id="about"
+      className="font-manrope project text-light-900 dark:text-dark-900 py-16 px-5 md:px-10  mx-auto "
+    >
       <div className=" flex flex-col md:gap-8 md:max-h-[400px] md:flex-row">
         <div className="flex-1 pt-16">
           <h2 className="text-xl font-bold mb-6">A BIT ABOUT ME</h2>

@@ -5,6 +5,9 @@
 
 /* Define default values for light mode */
 /* src/styles/globals.css */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --Gray-Default: #ffffff; /* Assuming light mode by default */

@@ -12,7 +12,7 @@ const FeaturedProjects: React.FC = () => {
   );
 
   return (
-    <section>
+    <section id="work">
       <h2 className="text-3xl mb-8 font-extralight">
         Featured <span className="font-medium">Works</span>
       </h2>
