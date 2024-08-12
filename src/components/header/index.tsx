@@ -10,6 +10,10 @@ const Header: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   const logo = "/logo.svg";
   const open = "/open.svg";
   const close = "/close.svg";
@@ -97,6 +101,7 @@ const Header: React.FC = () => {
                   key={link.label}
                   href={link.url}
                   className="text-dark-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                  onClick={closeMenu}
                 >
                   {link.label}
                 </a>
