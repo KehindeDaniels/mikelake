@@ -34,7 +34,9 @@ const FeaturedProjects: React.FC = () => {
                 {project.title}
               </h3>
               <p className="mt-2 text-dark-300 font-light">
-                {project.description}
+                {project.description.map((descriptions, index) => (
+                  <span key={index}>{descriptions.text}</span>
+                ))}
               </p>{" "}
               <div className="mt-4">
                 {project.tags.map((tag, index) => (

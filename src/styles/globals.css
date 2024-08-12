@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define default values for light mode */
+/* src/styles/globals.css */
+
+:root {
+  --Gray-Default: #ffffff; /* Assuming light mode by default */
+}
+
+/* When dark mode is active */
+.dark {
+  --Gray-Default: #030712; /* Dark mode specific variables */
+}
+
+.project {
+  background: radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(78, 138, 255, 0.2) 0%,
+      rgba(78, 138, 255, 0) 100%
+    ),
+    var(--Gray-Default);
+}
+
+/* Similarly adjust other styles that need to switch between themes */
+
 .gradient-text {
   background: linear-gradient(
     89deg,
