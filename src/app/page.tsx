@@ -12,11 +12,13 @@ const Page: React.FC = () => {
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Header />
       <Hero />
-      <div className="max-w-7xl mx-auto p-8">
+      <div className="max-w-7xl mx-auto px-8">
         <FeaturedProjects />
         <SelectedProjects />
         <AboutMe />
         <Skills />
+      </div>
+      <div className="max-w-7xl  mx-auto px-8">
         <Footer />
       </div>
     </div>
