@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import FeaturedProjects from "@/components/featuredProjects";
 import SelectedProjects from "@/components/selectedProjects";
+import AboutMe from "@/components/aboutMe";
 
 const Page: React.FC = () => {
   return (
@@ -11,7 +12,8 @@ const Page: React.FC = () => {
       <Hero />
       <div className="max-w-7xl mx-auto p-8">
         <FeaturedProjects />
-        <SelectedProjects /> // Add the SelectedProjects component here
+        <SelectedProjects />
+        <AboutMe />
       </div>
     </div>
   );
