@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
       id="contact"
       className="dark:bg-gray-dark  text-light-100 dark:text-dark-300 py-12"
     >
-      <div className="container mx-auto max-w-72 px-4 text-center flex flex-col justify-center items-center ">
+      <div className="container mx-auto max-w-[1500px] px-4 text-center flex flex-col justify-center items-center ">
         <h2 className="text-xl mb-4">Get in Touch.</h2>
         <p className="mb-6">
           If you are looking to hire a product designer, I’m currently available

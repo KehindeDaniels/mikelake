@@ -9,10 +9,10 @@ import Footer from "@/components/footer";
 
 const Page: React.FC = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white max-w-[1500px]">
       <Header />
       <Hero />
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className=" mx-auto px-4 md:px-8">
         <div id="work" className="">
           <FeaturedProjects />
           <SelectedProjects />
@@ -20,7 +20,7 @@ const Page: React.FC = () => {
         <AboutMe />
         <Skills />
       </div>
-      <div id="contact" className="max-w-7xl  mx-auto px-8">
+      <div id="contact" className="max-w-[1500px]  mx-auto px-4 md:px-8">
         <Footer />
       </div>
     </div>
