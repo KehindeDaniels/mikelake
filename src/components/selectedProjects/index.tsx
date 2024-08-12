@@ -25,7 +25,7 @@ const SelectedProjects: React.FC = () => {
                 : "flex-col md:flex-row-reverse"
             } dark:bg-dark-1000 bg-gradient-hero md:gap-2 rounded-lg shadow-lg`}
           >
-            <div className="flex-1 dark:bg-header-dark md:rounded-lg bg-header-light rounded-t-lg pt-4 px-4">
+            <div className="flex-1 dark:bg-header-dark md:rounded-lg bg-header-light rounded-t-lg pt-4 px-4 -z-1">
               <Image
                 src={project.image}
                 alt={project.title}
