@@ -1,21 +1,31 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { CiMail } from "react-icons/ci";
-
+import useAOS from "../../hooks/useAOS";
 const Hero: React.FC = () => {
   const profile = "/images/mike.png";
   const WhiteStar = "/starWhite.svg";
   const DarkStar = "/starDark.svg";
   const BlueStar = "/starBlue.svg";
 
+  useAOS();
   return (
     <section className=" bg-gradient-hero py-8 sm:py-20 font-manrope">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse items-center md:flex-row md:justify-between">
         {/* Left */}
-        <div className="text-center md:text-left flex-1 flex flex-col items-center sm:items-start ">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight z-50">
+        <div
+          data-aos="fade-down"
+          className="text-center md:text-left flex-1 flex flex-col items-center sm:items-start "
+        >
+          <h1
+            data-aos="fade-down"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight z-50"
+          >
             Hi, I am <br />
-            <span className="gradient-text">Michael Adeleke</span>
+            <span className="gradient-text text-6xl font-bold leading-[70px]">
+              Michael Adeleke
+            </span>
           </h1>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 z-50 sm:z-0">
             A Product Designer
@@ -24,7 +34,10 @@ const Hero: React.FC = () => {
             I help businesses and companies reach their goals by designing
             user-centric digital products & interactive experiences.
           </p>
-          <button className="bg-light-50 dark:bg-dark-50 text-dark-50 dark:text-light-50 py-3 px-6 w-64 justify-center rounded-xl flex gap-4 items-center hover:bg-light-900 transition duration-300 z-50 sm:z-0">
+          <button
+            data-aos="fade-down"
+            className="bg-light-50 dark:bg-dark-50 text-dark-50 dark:text-light-50 py-3 px-6 w-64 justify-center rounded-xl flex gap-4 items-center hover:bg-light-900 transition duration-300 z-50 sm:z-0"
+          >
             <CiMail className="text-2xl font-bold" />
             Contact Me
           </button>
