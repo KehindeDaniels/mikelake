@@ -19,8 +19,6 @@ const config: Config = {
         worksans: ["var(--font-work-sans)", "sans-serif"],
       },
       colors: {
-        "gray-default": "#ffffff", // Light theme gray
-        "gray-dark": "#030712",
         dark: {
           DEFAULT: "#ffffff",
           50: "#f9fafb",
@@ -48,7 +46,6 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "gradient-project": `radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0.20) 0%, rgba(78, 138, 255, 0.00) 100%), var(--Gray-Dark-Default, #030712)`,
         "gradient-radial":
           "radial-gradient(circle at center, #4E8AFF 0%, #030712 100%)",
         "gradient-hero":
@@ -65,23 +62,12 @@ const config: Config = {
           "radial-gradient(100% 100% at 50.1% 100%, rgba(5, 44, 119, 0.5) 0%, rgba(78, 138, 255, 0) 100%)",
         "mobile-header-dark": "rgba(110, 141, 210, 0.1)",
         "mobile-header-light": "var(--White, #fff)",
-        "gradient-radial-custom":
-          "radial-gradient(100% 100% at 50% 0%, rgba(78, 138, 255, 0.2) 0%, rgba(78, 138, 255, 0) 100%), #030712",
-        "gradient-light":
-          "radial-gradient(100% 100% at 50% 0%, rgba(78, 138, 255, 0.2) 0%, rgba(78, 138, 255, 0) 100%),#030712",
-        "gradient-dark":
-          "radial-gradient(100% 100% at 50% 0%, rgba(78, 138, 255, 0.2) 0%, rgba(78, 138, 255, 0) 100%), #ffffff",
       },
       boxShadow: {
         "mobile-header-dark": "0px 4px 4px 0px rgba(50, 50, 71, 0.08)",
         "mobile-header-light":
           "0px 2px 2px 0px rgba(50, 50, 71, 0.06), 0px 2px 4px 0px rgba(50, 50, 71, 0.06)",
       },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundImage: ["dark"], // Enable dark variants for backgroundImage
     },
   },
   plugins: [],

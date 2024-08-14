@@ -3,32 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define default values for light mode */
-/* src/styles/globals.css */
-html {
-  scroll-behavior: smooth;
-}
-
-:root {
-  --Gray-Default: #ffffff; /* Assuming light mode by default */
-}
-
-/* When dark mode is active */
-.dark {
-  --Gray-Default: #030712; /* Dark mode specific variables */
-}
-
-.project {
-  background: radial-gradient(
-      100% 100% at 50% 0%,
-      rgba(78, 138, 255, 0.2) 0%,
-      rgba(78, 138, 255, 0) 100%
-    ),
-    var(--Gray-Default);
-}
-
-/* Similarly adjust other styles that need to switch between themes */
-
 .gradient-text {
   background: linear-gradient(
     89deg,
@@ -39,11 +13,11 @@ html {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* font-size: 64px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: 70px;
-  letter-spacing: -0.5px; */
+  letter-spacing: -0.5px;
 }
 
 .header-dark {

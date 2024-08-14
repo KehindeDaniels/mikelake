@@ -10,25 +10,25 @@ const Header: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   const logo = "/logo.svg";
   const open = "/open.svg";
   const close = "/close.svg";
   const navLinks = [
-    { label: "About", url: "/#about" },
-    { label: "Work", url: "/#work" },
-    { label: "Contact", url: "/#contact" },
+    { label: "About", url: "#" },
+    { label: "Work", url: "#" },
+    { label: "Contact", url: "#" },
+  ];
+  const actionButtons = [
+    { label: "Log in", url: "/signin" },
+    { label: "Start free trial", url: "/signup" },
   ];
 
   return (
     <>
-      <header className="sticky top-0 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-dark-glassmorphism dark:border-dark-300 dark:border-opacity-20 py-4 sm:py-0 z-[10000]">
-        <nav className="mobile-header-dark max-w-[90%] sm:max-w-[1500px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
+      <header className="sm:bg-header-light dark:bg-header-dark border-b border-dark-glassmorphism dark:border-dark-300 dark:border-opacity-20 py-4 sm:py-0">
+        <nav className="mobile-header-dark max-w-[90%] sm:max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
           {/* logo */}
-          <div className="">
+          <div>
             <Image
               className="w-28"
               src={logo}
@@ -72,10 +72,9 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </header>
-
       {/* Mobile Nav */}
       <nav
-        className={`fixed inset-0 z-[10000] transition-transform duration-300 transform ${
+        className={`fixed inset-0 z-[10000]  transition-transform duration-300 transform ${
           isOpen ? "slide-in" : "slide-out"
         }`}
       >
@@ -101,7 +100,6 @@ const Header: React.FC = () => {
                   key={link.label}
                   href={link.url}
                   className="text-dark-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  onClick={closeMenu}
                 >
                   {link.label}
                 </a>
