@@ -3,6 +3,21 @@ import "../styles/globals.css";
 import { Providers } from "@/context/provider";
 import { Inter, Manrope, Work_Sans } from "next/font/google";
 
+// Add custom element type for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "call-us-selector": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & {
+        phonesystemUrl?: string;
+        party?: string;
+      };
+    }
+  }
+}
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 const workSans = Work_Sans({
@@ -66,7 +81,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           defer
           src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js"
           id="tcx-callus-js"
-          charset="utf-8"
+          charSet="utf-8"
         ></script>
       </body>
     </html>
