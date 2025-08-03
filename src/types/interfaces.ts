@@ -19,3 +19,12 @@ export interface Project {
   tags: string[];
   type: ProjectType;
 }
+
+// types/portfolio.ts
+export interface ProjectItem {
+  id: number;
+  title: string;
+  category: string;
+  imagePath: string;
+  colors: string;
+}
