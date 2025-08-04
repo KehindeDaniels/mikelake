@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import "../styles/globals.css";
 import { Providers } from "@/context/provider";
 import { Inter, Manrope, Work_Sans } from "next/font/google";
+import LiveChat from "@/components/liveChat";
 
 // Add custom element type for TypeScript
 declare global {
@@ -64,11 +65,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* <Header /> */}
           <main>{children}</main>
         </Providers>
+        <LiveChat />
         {/* 3CX Live Chat - Dynamic Configuration */}
-        <call-us-selector
+        {/* <call-us-selector
           phonesystem-url="https://1206.3cx.cloud"
           party="LiveChat113082"
-        ></call-us-selector>
+        ></call-us-selector> */}
 
         {/* Existing GetButton script
         <script
@@ -77,12 +79,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         ></script> */}
 
         {/* 3CX Live Chat Script */}
-        <script
+        {/* <script
           defer
           src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js"
           id="tcx-callus-js"
-          charSet="utf-8"
-        ></script>
+          charset="utf-8"
+        ></script> */}
       </body>
     </html>
   );
