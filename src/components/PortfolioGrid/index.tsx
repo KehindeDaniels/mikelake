@@ -1,75 +1,8 @@
 "use client";
 import React from "react";
 import ProjectCard from "../ProjectCard";
-// import ProjectCard from "@/components/projectCard";
 
-// Smart data structure - easy to update
-interface ProjectItem {
-  id: number;
-  title: string;
-  category: string;
-  imagePath: string;
-  colors: string;
-}
-
-const portfolioData: ProjectItem[] = [
-  {
-    id: 1,
-    title: "Breaking Barriers",
-    category: "Sports Platform",
-    imagePath: "/projects/breaking-barriers.jpg",
-    colors: "from-orange-400 via-red-500 to-pink-500",
-  },
-  {
-    id: 2,
-    title: "Portfolio Showcase",
-    category: "Creative Portfolio",
-    imagePath: "/projects/portfolio-showcase.jpg",
-    colors: "from-pink-400 via-purple-500 to-indigo-500",
-  },
-  {
-    id: 3,
-    title: "Nike Strength",
-    category: "Fitness App",
-    imagePath: "/projects/nike-strength.jpg",
-    colors: "from-gray-400 via-gray-600 to-gray-800",
-  },
-  {
-    id: 4,
-    title: "Payment Infrastructure",
-    category: "Fintech Solution",
-    imagePath: "/projects/payment-infra.jpg",
-    colors: "from-blue-400 via-indigo-500 to-purple-600",
-  },
-  {
-    id: 5,
-    title: "Music Platform",
-    category: "Streaming Service",
-    imagePath: "/projects/music-platform.jpg",
-    colors: "from-purple-500 via-pink-500 to-red-500",
-  },
-  {
-    id: 6,
-    title: "Level Up Design",
-    category: "Design System",
-    imagePath: "/projects/level-up.jpg",
-    colors: "from-orange-400 via-red-500 to-pink-600",
-  },
-  {
-    id: 7,
-    title: "E-commerce Platform",
-    category: "Online Store",
-    imagePath: "/projects/ecommerce.jpg",
-    colors: "from-green-400 via-blue-500 to-purple-600",
-  },
-  {
-    id: 8,
-    title: "Dashboard Analytics",
-    category: "Data Visualization",
-    imagePath: "/projects/dashboard.jpg",
-    colors: "from-cyan-400 via-blue-500 to-indigo-600",
-  },
-];
+import { portfolioData } from "@/data/portfolioData";
 
 // Split data into two rows for different animations
 const topRowProjects = portfolioData.slice(0, 4);

@@ -1,5 +1,7 @@
 // types/interfaces.ts
 
+import type { StaticImageData } from "next/image";
+
 export enum ProjectType {
   Featured = "featured",
   Selected = "selected",
@@ -25,6 +27,6 @@ export interface ProjectItem {
   id: number;
   title: string;
   category: string;
-  imagePath: string;
+  imagePath: StaticImageData;
   colors: string;
 }
