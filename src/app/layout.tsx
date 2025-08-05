@@ -65,26 +65,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* <Header /> */}
           <main>{children}</main>
         </Providers>
-        <LiveChat />
-        {/* 3CX Live Chat - Dynamic Configuration */}
-        {/* <call-us-selector
-          phonesystem-url="https://1206.3cx.cloud"
-          party="LiveChat113082"
-        ></call-us-selector> */}
-
-        {/* Existing GetButton script
-        <script
-          defer
-          src="https://static.getbutton.io/widget/bundle.js?id=VYSv1"
-        ></script> */}
-
-        {/* 3CX Live Chat Script */}
-        {/* <script
-          defer
-          src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js"
-          id="tcx-callus-js"
-          charset="utf-8"
-        ></script> */}
       </body>
     </html>
   );

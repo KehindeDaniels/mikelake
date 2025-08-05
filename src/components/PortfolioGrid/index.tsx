@@ -78,10 +78,10 @@ const bottomRowProjects = portfolioData.slice(4, 8);
 const PortfolioGrid: React.FC = () => {
   return (
     <section className="relative bg-slate-900 py-8 overflow-hidden">
-      <div className="relative max-w-[85rem] mx-auto px-4">
+      <div className="relative max-w-[75rem] mx-auto px-4">
         {/* Sleek Glassmorphism Container */}
         <div
-          className="relative rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl shadow-black/20 p-8 overflow-hidden"
+          className="relative rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl shadow-black/20 p-6 overflow-hidden"
           style={{
             background:
               "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
@@ -89,9 +89,9 @@ const PortfolioGrid: React.FC = () => {
               "0 25px 45px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.05)",
           }}
         >
-          {/* Top Row - Moving Right (3.5 cards visible) */}
-          <div className="flex gap-6 mb-6 animate-scroll-right">
-            <div className="flex gap-6 min-w-max">
+          {/* Top Row - Moving Right (2.5-3 cards visible) */}
+          <div className="flex gap-8 mb-6 animate-scroll-right">
+            <div className="flex gap-8 min-w-max">
               {topRowProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
@@ -105,9 +105,9 @@ const PortfolioGrid: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Row - Moving Left (3.5 cards visible) */}
-          <div className="flex gap-6 animate-scroll-left">
-            <div className="flex gap-6 min-w-max">
+          {/* Bottom Row - Moving Left (2.5-3 cards visible) */}
+          <div className="flex gap-8 animate-scroll-left">
+            <div className="flex gap-8 min-w-max">
               {bottomRowProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
@@ -122,8 +122,8 @@ const PortfolioGrid: React.FC = () => {
           </div>
 
           {/* Enhanced gradient overlays for clean edges */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900/60 via-slate-900/20 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900/60 via-slate-900/20 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-900/80 via-slate-900/40 to-transparent pointer-events-none z-10"></div>
 
           {/* Additional glassmorphism effect */}
           <div className="absolute inset-0 rounded-3xl border border-white/5 pointer-events-none"></div>
