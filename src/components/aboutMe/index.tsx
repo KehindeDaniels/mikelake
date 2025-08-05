@@ -205,7 +205,7 @@ const AboutMe: React.FC = () => {
 
       <div className="relative z-20 ">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 ">
-          <div className="p-24  rounded-3xl shadow-2xl shadow-gray-300/80 flex flex-col md:flex-row md:justify-between  items-center gap-0 backdrop-blur-sm border border-gray-100/50">
+          <div className="p-24 -mb-32  rounded-3xl shadow-2xl shadow-gray-300/80 flex flex-col md:flex-row md:justify-between  items-center gap-0 backdrop-blur-sm border border-gray-100/50">
             {/* Image Section */}
             <div className="  w-full md:w-80 h-96 md:h-[400px] md:flex-1 relative ">
               <Image
