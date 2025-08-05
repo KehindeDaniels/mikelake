@@ -10,7 +10,7 @@ import {
   Github,
   ExternalLink,
 } from "lucide-react";
-import { images } from "../../lib/index";
+import { images } from "../../../public/images/index";
 
 // Types
 interface SocialLink {
