@@ -1,6 +1,6 @@
 // src/data/portfolioData.ts
 
-import { images } from "@/lib";
+import { images } from "../lib/index";
 import type { ProjectItem } from "@/types/interfaces"; // or portfolio.ts if separate
 
 export const portfolioData: ProjectItem[] = [

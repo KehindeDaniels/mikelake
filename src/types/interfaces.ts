@@ -1,5 +1,4 @@
 // types/interfaces.ts
-
 import type { StaticImageData } from "next/image";
 
 export enum ProjectType {
@@ -22,11 +21,11 @@ export interface Project {
   type: ProjectType;
 }
 
-// types/portfolio.ts
+// ✅ Fixed: Change StaticImageData to string since you're using paths from public folder
 export interface ProjectItem {
   id: number;
   title: string;
   category: string;
-  imagePath: StaticImageData;
+  imagePath: string; // ← Changed from StaticImageData to string
   colors: string;
 }
