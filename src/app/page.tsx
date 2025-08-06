@@ -18,19 +18,15 @@ const Page: React.FC = () => {
       <Hero />
 
       {/* Rest of your existing components */}
-      <div className="">
-        <AboutMe />
-        <WorkProcess />
-        <SelectedProjects />
-        <ProjectCTA />
-        <FeaturedProjectsGrid />
-        <Skills />
-        <ContactSection />
-      </div>
+      <AboutMe />
+      <WorkProcess />
+      <SelectedProjects />
+      <ProjectCTA />
+      <FeaturedProjectsGrid />
+      <Skills />
+      <ContactSection />
 
-      <div id="contact" className="max-w-[1700px] mx-auto px-4 md:px-8">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
