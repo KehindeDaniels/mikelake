@@ -20,6 +20,7 @@ const Page: React.FC = () => {
 
       {/* Rest of your existing components */}
       <AboutMe />
+
       <WorkProcess />
       {/* In your parent layout */}
       {/* <div className="snap-y snap-mandatory h-screen overflow-y-scroll">

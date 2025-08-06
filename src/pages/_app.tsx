@@ -7,7 +7,11 @@ import AOS from "aos";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      // once: true, // only animate once
+      duration: 800, // default duration
+      easing: "ease-out-cubic",
+    });
   }, []);
 
   return (
