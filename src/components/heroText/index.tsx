@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useInView, easeOut, easeIn } from "framer-motion";
-import { ArrowRight, Eye } from "lucide-react";
+import { ArrowRight, Eye, UserPlus } from "lucide-react";
 import HeroMetrics from "../heroMetrics";
 
 // Animation variant
@@ -91,13 +91,25 @@ const HeroText: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1 flex items-center gap-3">
+            <button
+              onClick={() => {
+                const el = document.getElementById("process");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1 flex items-center gap-3"
+            >
               See My Process
               <ArrowRight size={20} />
             </button>
 
-            <button className="border border-white/30 hover:border-white/50 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 flex items-center gap-3 transform hover:-translate-y-1">
-              <Eye size={20} />
+            <button
+              onClick={() => {
+                const el = document.getElementById("contact-me");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="border border-white/30 hover:border-white/50 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 flex items-center gap-3 transform hover:-translate-y-1"
+            >
+              <UserPlus size={20} />
               To Hire Me
             </button>
           </div>

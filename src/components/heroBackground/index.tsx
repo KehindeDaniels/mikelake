@@ -4,35 +4,35 @@ import React from "react";
 const HeroBackground: React.FC = () => {
   return (
     <>
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         {/* Circles */}
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full border-2 border-transparent bg-gradient-to-r from-red-400/40 to-pink-400/40 animate-spin-slow opacity-60">
+        <div className="absolute top-10 left-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full border-2 border-transparent bg-gradient-to-r from-red-400/30 to-pink-400/30 animate-spin-slow opacity-30 sm:opacity-60 scale-75 sm:scale-100">
           <div className="absolute inset-2 rounded-full bg-slate-900"></div>
         </div>
 
-        <div className="absolute top-40 right-32 w-24 h-24 rounded-full border-2 border-transparent bg-gradient-to-br from-purple-400/50 to-blue-400/50 animate-pulse opacity-70">
+        <div className="absolute top-32 right-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-transparent bg-gradient-to-br from-purple-400/40 to-blue-400/40 animate-pulse opacity-30 sm:opacity-70 scale-75 sm:scale-100">
           <div className="absolute inset-2 rounded-full bg-slate-900"></div>
         </div>
 
-        <div className="absolute bottom-60 left-1/4 w-20 h-20 rounded-full border-2 border-transparent bg-gradient-to-tr from-cyan-400/40 to-purple-400/40 animate-bounce opacity-60">
+        <div className="absolute bottom-40 left-[15%] w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-transparent bg-gradient-to-tr from-cyan-400/30 to-purple-400/30 animate-bounce opacity-30 sm:opacity-60 scale-75 sm:scale-100">
           <div className="absolute inset-2 rounded-full bg-slate-900"></div>
         </div>
 
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full border-2 border-transparent bg-gradient-to-bl from-orange-400/50 to-red-400/50 animate-spin-reverse opacity-50">
+        <div className="absolute top-1/2 right-[10%] w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-transparent bg-gradient-to-bl from-orange-400/40 to-red-400/40 animate-spin-reverse opacity-30 sm:opacity-50 scale-75 sm:scale-100">
           <div className="absolute inset-2 rounded-full bg-slate-900"></div>
         </div>
 
         {/* Floating Circles */}
-        <div className="absolute top-32 left-1/3 w-8 h-8 rounded-full border border-transparent bg-gradient-to-r from-pink-400/60 to-purple-400/60 animate-float opacity-80">
+        <div className="absolute top-[45%] left-1/3 w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-transparent bg-gradient-to-r from-pink-400/50 to-purple-400/50 animate-float opacity-30 sm:opacity-80 scale-75 sm:scale-100">
           <div className="absolute inset-1 rounded-full bg-slate-900"></div>
         </div>
 
-        <div className="absolute bottom-40 right-1/3 w-12 h-12 rounded-full border border-transparent bg-gradient-to-bl from-blue-400/50 to-indigo-400/50 animate-float-delayed opacity-70">
+        <div className="absolute bottom-32 right-1/3 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-transparent bg-gradient-to-bl from-blue-400/40 to-indigo-400/40 animate-float-delayed opacity-30 sm:opacity-70 scale-75 sm:scale-100">
           <div className="absolute inset-1 rounded-full bg-slate-900"></div>
         </div>
 
         {/* Animated Lines */}
-        <svg className="absolute top-0 left-0 w-full h-full opacity-20">
+        <svg className="absolute top-0 left-0 w-full h-full opacity-10 sm:opacity-20">
           <defs>
             <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#f472b6" stopOpacity="0.4" />
@@ -62,131 +62,12 @@ const HeroBackground: React.FC = () => {
           />
         </svg>
 
-        {/* Background orbs */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-purple-500/15 via-pink-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        {/* Background Orbs */}
+        <div className="absolute -top-32 -right-32 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow opacity-20 sm:opacity-30 scale-90 sm:scale-100"></div>
         <div
-          className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-blue-500/15 via-cyan-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"
+          className="absolute -bottom-32 -left-32 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-blue-500/10 via-cyan-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow opacity-20 sm:opacity-30 scale-90 sm:scale-100"
           style={{ animationDelay: "3s" }}
         ></div>
-        <style jsx>{`
-          @keyframes spin-slow {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
-
-          @keyframes spin-reverse {
-            from {
-              transform: rotate(360deg);
-            }
-            to {
-              transform: rotate(0deg);
-            }
-          }
-
-          @keyframes float {
-            0%,
-            100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-20px);
-            }
-          }
-
-          @keyframes float-delayed {
-            0%,
-            100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-15px);
-            }
-          }
-
-          @keyframes pulse-slow {
-            0%,
-            100% {
-              opacity: 0.1;
-            }
-            50% {
-              opacity: 0.2;
-            }
-          }
-
-          @keyframes gradient {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
-          }
-
-          @keyframes dash {
-            0% {
-              stroke-dashoffset: 0;
-            }
-            100% {
-              stroke-dashoffset: 20;
-            }
-          }
-
-          @keyframes draw-line {
-            0% {
-              stroke-dasharray: 0 1000;
-            }
-            100% {
-              stroke-dasharray: 1000 0;
-            }
-          }
-
-          .animate-spin-slow {
-            animation: spin-slow 8s linear infinite;
-          }
-
-          .animate-spin-reverse {
-            animation: spin-reverse 6s linear infinite;
-          }
-
-          .animate-float {
-            animation: float 4s ease-in-out infinite;
-          }
-
-          .animate-float-delayed {
-            animation: float-delayed 5s ease-in-out infinite 2s;
-          }
-
-          .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
-          }
-
-          .animate-gradient {
-            background-size: 200% 200%;
-            animation: gradient 3s ease infinite;
-          }
-
-          .animate-dash {
-            stroke-dasharray: 8;
-            animation: dash 1s linear infinite;
-          }
-
-          .animate-draw-line {
-            stroke-dasharray: 1000;
-            animation: draw-line 3s ease-in-out infinite;
-          }
-
-          .animate-draw-line-delayed {
-            stroke-dasharray: 1000;
-            animation: draw-line 3s ease-in-out infinite 1.5s;
-          }
-        `}</style>
       </div>
     </>
   );
