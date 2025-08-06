@@ -19,6 +19,7 @@ const Page: React.FC = () => {
       <div className="">
         <AboutMe />
         <WorkProcess />
+        <SelectedProjects />
       </div>
 
       <div id="contact" className="max-w-[1700px] mx-auto px-4 md:px-8">

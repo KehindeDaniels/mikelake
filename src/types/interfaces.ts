@@ -6,26 +6,25 @@ export enum ProjectType {
   Selected = "selected",
 }
 
-interface DescriptionPart {
-  text: string;
-  isBold: boolean;
-}
-
 export interface Project {
   id: string;
   title: string;
-  description: DescriptionPart[];
+  category?: string; // Added optional category
+  description: string; // Changed to plain string
+  boldText: string; // The text that should be bolded
   image: string;
-  link?: string;
+  link: string; // Case study or portfolio link
+  liveUrl?: string; // Live site URL (optional)
   tags: string[];
   type: ProjectType;
+  isLive: boolean; // Whether the project is live
 }
 
-// ✅ Fixed: Change StaticImageData to string since you're using paths from public folder
+// Portfolio interfaces (keeping existing ones)
 export interface ProjectItem {
   id: number;
   title: string;
   category: string;
-  imagePath: string; // ← Changed from StaticImageData to string
+  imagePath: string;
   colors: string;
 }

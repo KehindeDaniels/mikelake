@@ -4,96 +4,85 @@ import { Project, ProjectType } from "@/types/interfaces";
 export const projectsData: Project[] = [
   {
     id: "1",
-    title: "STtylehub E-commerce ",
-    description: [
-      {
-        text: "A fashion App offering personalized shopping,  ",
-        isBold: false,
-      },
-      { text: "Visual search, and features", isBold: true },
-      {
-        text: " designed for fashion enthusiasts",
-        isBold: false,
-      },
-    ],
+    title: "StyleHub E-commerce",
+    category: "Fashion App",
+    description:
+      "A fashion App offering personalized shopping, **visual search, and advanced features** designed for fashion enthusiasts seeking unique styles.",
+    boldText: "visual search, and advanced features",
     image: "/images/styleHub.png",
     link: "https://www.behance.net/gallery/200844327/StyleHub-E-commerce-Fahion-App",
-    tags: ["Photoshop-", "Figma-", "Styled Components"],
+    liveUrl: "https://stylehub-demo.vercel.app", // Example live URL
+    tags: ["UI/UX Design", "Figma", "Mobile App"],
     type: ProjectType.Featured,
+    isLive: true,
   },
   {
     id: "2",
-    title: "HOT GIS APP",
-    description: [
-      { text: "A modern, cohesive news app interface ", isBold: false },
-      { text: "for a unified user experience", isBold: true },
-      { text: ".", isBold: false },
-    ],
+    title: "HOT GIST APP",
+    category: "News Platform",
+    description:
+      "A modern, cohesive news app interface **for a unified user experience** with real-time updates and personalized feeds.",
+    boldText: "for a unified user experience",
     image: "/images/Hotgist.png",
     link: "https://example.com",
-    tags: ["Mobile app"],
+    tags: ["Mobile App Design", "News Platform"],
     type: ProjectType.Selected,
+    isLive: false,
   },
   {
     id: "3",
     title: "TASTEHUB FOOD ORDERING APP",
-    description: [
-      {
-        text: "A User-friendly food app offering diverse menu, ",
-        isBold: false,
-      },
-      {
-        text: "real-time updates, personalized recommendations, and seamless vendor communication for a great experience",
-        isBold: true,
-      },
-      { text: ".", isBold: false },
-    ],
+    category: "Food & Delivery",
+    description:
+      "A user-friendly food app offering diverse menu, **real-time updates, personalized recommendations, and seamless vendor communication** for a delightful dining experience.",
+    boldText:
+      "real-time updates, personalized recommendations, and seamless vendor communication",
     image: "/images/tastehub.png",
     link: "https://www.behance.net/gallery/178590023/TasteHub-Food-ordering-App",
-    tags: ["Mobile App"],
+    liveUrl: "https://tastehub-app.vercel.app", // Example live URL
+    tags: ["Mobile App", "Food Delivery", "UX Design"],
     type: ProjectType.Selected,
+    isLive: true,
   },
   {
     id: "4",
     title: "Envacord Inventory",
-    description: [
-      { text: "A digital platform for efficient inventory", isBold: false },
-      { text: "management with real-time tracking, user-", isBold: true },
-      { text: "friendly interfaces, and critical alerts.", isBold: false },
-    ],
+    category: "Business Solution",
+    description:
+      "A digital platform for efficient inventory **management with real-time tracking, user-friendly interfaces, and critical alerts** for businesses.",
+    boldText:
+      "management with real-time tracking, user-friendly interfaces, and critical alerts",
     image: "/images/envaccord.png",
     link: "https://example.com",
-    tags: ["Next.js", "Tailwind CSS"],
+    tags: ["Next.js", "Tailwind CSS", "Dashboard"],
     type: ProjectType.Featured,
+    isLive: false,
   },
   {
     id: "5",
-    title: "TRADE BLOOM E-COMMERCE DESIGN",
-    description: [
-      { text: "A responsive e-commerce platform for gadgets, ", isBold: false },
-      {
-        text: "emphasizing streamlined user experience and efficient checkout processes",
-        isBold: true,
-      },
-      { text: ".", isBold: false },
-    ],
+    title: "TRADEBOOM E-COMMERCE",
+    category: "E-Commerce Platform",
+    description:
+      "A responsive e-commerce platform for gadgets, **emphasizing streamlined user experience and efficient checkout processes** with modern design principles.",
+    boldText:
+      "emphasizing streamlined user experience and efficient checkout processes",
     image: "/images/trade.png",
     link: "https://example.com",
-    tags: ["Wbsite Design"],
+    tags: ["Website Design", "E-commerce", "Responsive"],
     type: ProjectType.Selected,
+    isLive: false,
   },
-
   {
     id: "6",
-    title: "HNG online Store",
-    description: [
-      { text: "An innovative online store offering high ", isBold: false },
-      { text: "performance gadget and accessories, Designed", isBold: true },
-      { text: "for a seamless and modern shopping experience", isBold: false },
-    ],
+    title: "HNG Online Store",
+    category: "E-Commerce",
+    description:
+      "An innovative online store offering high-**performance gadgets and accessories, designed** for a seamless and modern shopping experience.",
+    boldText: "performance gadgets and accessories, designed",
     image: "/images/hng.png",
     link: "http://linktr.ee/Mikelakers",
-    tags: ["Figma-", "Styled Components"],
+    tags: ["Figma", "Styled Components", "E-commerce"],
     type: ProjectType.Featured,
+    isLive: false,
   },
 ];

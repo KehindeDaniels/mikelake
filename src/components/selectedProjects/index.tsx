@@ -1,75 +1,183 @@
 // components/selectedProjects/SelectedProjects.tsx
-
+"use client";
 import React from "react";
 import Image from "next/image";
 import { projectsData } from "../../data/projectsData";
 import { Project, ProjectType } from "../../types/interfaces";
-import { ChevronRight } from "lucide-react";
+import {
+  ChevronRight,
+  ExternalLink,
+  Zap,
+  Sparkles,
+  Rocket,
+} from "lucide-react";
+
 const SelectedProjects: React.FC = () => {
   const selectedProjects = projectsData.filter(
     (project: Project) => project.type === ProjectType.Selected
   );
 
-  return (
-    <section className="mt-16 font-manrope">
-      <h2 className="text-3xl mb-8 font-extralight">
-        Selected <span className="font-medium">Works</span>
-      </h2>
-      <div className="flex flex-col  gap-8 px-4 md:px-0">
-        {selectedProjects.map((project, index) => (
-          <div
-            key={project.id}
-            className={`flex ${
-              index % 2 === 0
-                ? "flex-col md:flex-row"
-                : "flex-col md:flex-row-reverse"
-            } dark:bg-dark-1000 bg-gradient-hero md:gap-2 rounded-lg shadow-lg`}
-          >
-            <div className="flex-1 dark:bg-header-dark md:rounded-lg bg-header-light rounded-t-lg pt-4 px-4 -z-1">
-              <Image
-                src={project.image}
-                alt={project.title}
-                layout="responsive"
-                width={1000}
-                height={1000}
-                className=" object-cover rounded-lg w-full h-full"
-              />
+  const ProjectCard: React.FC<{ project: Project; index: number }> = ({
+    project,
+    index,
+  }) => {
+    const isReversed = index % 2 !== 0;
+
+    return (
+      <div className="group relative">
+        <div
+          className={`
+            flex ${
+              isReversed
+                ? "flex-col lg:flex-row-reverse"
+                : "flex-col lg:flex-row"
+            } 
+            bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 
+            overflow-hidden border border-gray-100/50 hover:border-blue-200/50
+            hover:-translate-y-1
+          `}
+        >
+          {/* Image Section */}
+          <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="p-6 lg:p-8 h-full flex items-center justify-center">
+              <div className="relative w-full max-w-lg mx-auto">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="object-contain w-full h-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                  unoptimized
+                />
+
+                {/* Live Badge */}
+                {project.isLive && (
+                  <div className=" absolute -top-2 -right-2 flex items-center gap-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                    <Sparkles className="w-3 h-3 animate-bounce" />
+                    <Zap className="w-3 h-3" />
+                    <span>IT&#39;S LIVE</span>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="flex-1 project gap-4 rounded-md flex flex-col justify-end py-4 md:pb-16 text-light-100 dark:text-dark-50">
-              <h3 className="text-lg font-semibold  px-3 md:px-16">
-                {project.title}
-              </h3>
-              <p className="text-sm px-3 md:px-16">
-                {project.description.map((part, idx) => (
-                  <span
-                    key={idx}
-                    className={
-                      part.isBold ? "font-bold text-lg" : "font-normal"
-                    }
-                  >
-                    {part.text}
-                  </span>
-                ))}
-              </p>
-              <p className="font-extralight px-3 md:px-16">
-                {project.tags.map((tag, index) => (
-                  <span key={index} className=" mr-2">
-                    {tag}
-                  </span>
-                ))}
-              </p>
+          </div>
+
+          {/* Content Section */}
+          <div className="flex-1 flex flex-col justify-center p-8 lg:p-12 space-y-6">
+            {/* Category Badge */}
+            <div className="inline-flex">
+              <span className="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                {project.category || "Digital Product"}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <div className="text-gray-600 text-base lg:text-lg leading-relaxed">
+              {project.description.split(project.boldText).map((part, idx) => (
+                <span key={idx}>
+                  {part}
+                  {idx === 0 && (
+                    <span className="font-semibold text-gray-900">
+                      {project.boldText}
+                    </span>
+                  )}
+                </span>
+              ))}
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, tagIndex) => (
+                <span
+                  key={tagIndex}
+                  className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-lg font-medium"
+                >
+                  {tag.replace("-", "")}
+                </span>
+              ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              {/* Live Site Button (Priority) */}
+              {project.isLive && project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/live inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transform hover:-translate-y-0.5"
+                >
+                  <Rocket className="w-4 h-4 group-hover/live:animate-bounce animate-bounce" />
+                  <span>View Live Site</span>
+                  <ExternalLink className="w-4 h-4 group-hover/live:translate-x-0.5 transition-transform" />
+                </a>
+              )}
+
+              {/* Case Study Button */}
               <a
                 href={project.link}
-                className="flex justify-between border dark:border-dark-50 border-light-900 rounded-full max-w-36 px-4 py-1 hover:bg-dark-50 hover:text-light-900 transition-colors ml-3 md:ml-16"
                 target="_blank"
                 rel="noopener noreferrer"
+                className={`
+                  inline-flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5
+                  ${
+                    project.isLive
+                      ? "border-2 border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50"
+                      : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-lg hover:shadow-blue-500/25"
+                  }
+                `}
               >
-                <span>View Work</span>
-                <ChevronRight className="text-current " />
+                <span>Case Study</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
           </div>
-        ))}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Selected{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+              Works
+            </span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            A curated collection of projects showcasing user-centered design and
+            innovative digital solutions.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="space-y-16">
+          {selectedProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center gap-2 text-gray-600 text-sm">
+            <span>Want to see more?</span>
+            <a
+              href="/portfolio"
+              className="text-blue-600 hover:text-blue-700 font-semibold underline underline-offset-4 decoration-2 hover:decoration-blue-700 transition-colors"
+            >
+              View All Projects
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
