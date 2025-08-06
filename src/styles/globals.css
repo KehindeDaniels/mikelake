@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
 :root {
   --Gray-Default: #ffffff; /* Assuming light mode by default */
 }
@@ -116,4 +121,12 @@ html {
     ),
     var(--Gray-Dark-Default, #030712);
   background-blend-mode: plus-darker, normal, normal;
+}
+.process {
+  /* scroll-snap-type: y mandatory; */
+  background-color: red;
+}
+
+.snap-start {
+  scroll-snap-align: start;
 }
