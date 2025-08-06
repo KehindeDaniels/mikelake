@@ -36,10 +36,14 @@ const AboutMe: React.FC = () => {
 
   return (
     <section
-      className="py-16 bg-gradient-to-br from-gray-50 to-white relative"
+      className="
+        py-16 
+        relative 
+        transition-colors duration-500
+        bg-gradient-to-br from-gray-50 to-white 
+        dark:bg-[#132238] dark:from-[#132238] dark:to-[#132238]
+      "
       aria-labelledby="about-heading"
-      data-aos="fade-up"
-      data-aos-delay="100"
     >
       {/* Background Decorations */}
       {BACKGROUND_DECORATIONS.map((decoration, index) => (
@@ -50,7 +54,7 @@ const AboutMe: React.FC = () => {
         />
       ))}
 
-      <div className="relative z-20  ">
+      <div className="relative z-20">
         <AboutCard
           isExpanded={isExpanded}
           setIsExpanded={setIsExpanded}

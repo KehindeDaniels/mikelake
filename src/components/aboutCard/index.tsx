@@ -1,4 +1,3 @@
-// components/AboutCard.tsx
 "use client";
 
 import Image from "next/image";
@@ -28,7 +27,24 @@ const AboutCard: React.FC<Props> = ({ isExpanded, setIsExpanded }) => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="floating-bounce max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8"
     >
-      <div className="p-8 md:p-16 lg:p-24 -mb-16 md:-mb-32 rounded-3xl shadow-2xl shadow-gray-300/80 flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0 backdrop-blur-sm border border-gray-100/50">
+      <div
+        className="
+          relative
+          p-8 md:p-16 lg:p-24 
+          -mb-16 md:-mb-32 
+          rounded-3xl 
+          flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0 
+          border border-white/20 dark:border-white/10 
+          bg-white/40 dark:bg-white/5 
+          backdrop-blur-xl 
+          shadow-2xl shadow-gray-300/60 dark:shadow-black/40 
+          transition-colors duration-500
+          before:absolute before:inset-0 before:rounded-3xl before:pointer-events-none
+          before:border before:border-white/60 before:opacity-20
+          before:bg-gradient-to-br before:from-white/60 before:to-transparent
+          dark:before:from-white/20 dark:before:to-transparent
+        "
+      >
         {/* Image + Socials */}
         <div className="w-full max-w-sm lg:w-80 h-80 lg:h-[400px] lg:flex-1 relative order-1">
           <Image
@@ -41,7 +57,7 @@ const AboutCard: React.FC<Props> = ({ isExpanded, setIsExpanded }) => {
           />
 
           <div className="absolute w-full -bottom-8 lg:-bottom-12 flex justify-center">
-            <div className="flex gap-2 lg:gap-3 bg-white p-3 lg:p-4 shadow-xl shadow-gray-300/80 rounded-lg">
+            <div className="flex gap-2 lg:gap-3 bg-white p-3 lg:p-4 shadow-xl shadow-gray-300/80 dark:shadow-black/40 rounded-lg">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -51,7 +67,7 @@ const AboutCard: React.FC<Props> = ({ isExpanded, setIsExpanded }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                    className="w-10 h-10 bg-white/90 dark:bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
                   >
                     <Icon
                       className={`w-5 h-5 ${social.color} ${social.hoverColor} group-hover:scale-110 transition-transform`}
@@ -79,14 +95,14 @@ const AboutCard: React.FC<Props> = ({ isExpanded, setIsExpanded }) => {
                 } opacity-100`}
               >
                 {!isExpanded ? (
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
                     {CONTENT_DATA.description.preview}
                   </p>
                 ) : (
                   CONTENT_DATA.description.full.map((paragraph, index) => (
                     <p
                       key={index}
-                      className="text-gray-600 text-base leading-relaxed"
+                      className="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
                     >
                       {paragraph}
                     </p>
@@ -98,7 +114,7 @@ const AboutCard: React.FC<Props> = ({ isExpanded, setIsExpanded }) => {
             {/* Toggle Button */}
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium text-sm mb-8 transition-colors duration-200 group"
+              className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm mb-8 transition-colors duration-200 group"
               aria-expanded={isExpanded}
             >
               {isExpanded ? "Read Less" : "Read More"}

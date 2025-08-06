@@ -1,8 +1,6 @@
-// components/FeaturedProjects/FeaturedProjectCard.tsx
 "use client";
 import React from "react";
 import Image from "next/image";
-// import { FeaturedProject } from "../../types/featuredProject";
 import {
   ArrowRight,
   ExternalLink,
@@ -23,9 +21,9 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
 }) => {
   return (
     <div className="group relative">
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100/80 hover:border-blue-200/60 hover:-translate-y-2">
+      <div className="bg-white dark:bg-white/5 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100/80 dark:border-white/10 hover:border-blue-200/60 dark:hover:border-blue-400 hover:-translate-y-2">
         {/* Image Container */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 h-64">
+        <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1a2a3c] dark:to-[#132238] h-64">
           <Image
             src={project.image}
             alt={project.title}
@@ -46,26 +44,26 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
 
           {/* Category Badge */}
           <div className="absolute top-4 left-4">
-            <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="bg-white/90 dark:bg-white/10 backdrop-blur-sm text-gray-700 dark:text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
               {project.category}
             </span>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 text-gray-700 dark:text-gray-300">
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
             {project.title}
           </h3>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+          <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3">
             {project.description}
           </p>
 
           {/* Meta Information */}
-          <div className="flex items-center gap-4 text-xs text-gray-500">
+          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               <span>{project.completionDate}</span>
@@ -83,13 +81,13 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
             {project.tags.slice(0, 3).map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="text-xs text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg font-medium"
+                className="text-xs text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-2.5 py-1 rounded-lg font-medium"
               >
                 {tag}
               </span>
             ))}
             {project.tags.length > 3 && (
-              <span className="text-xs text-gray-500 bg-gray-100 px-2.5 py-1 rounded-lg font-medium">
+              <span className="text-xs text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-white/10 px-2.5 py-1 rounded-lg font-medium">
                 +{project.tags.length - 3}
               </span>
             )}
@@ -97,7 +95,7 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
 
           {/* Action Buttons */}
           <div className="flex gap-3 pt-2">
-            {/* Live Site Button (Priority) */}
+            {/* Live Site */}
             {project.isLive && project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -110,7 +108,7 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
               </a>
             )}
 
-            {/* Case Study Button */}
+            {/* Case Study */}
             <a
               href={project.caseStudyUrl}
               target="_blank"
@@ -120,7 +118,7 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
                 inline-flex items-center justify-center gap-2 font-medium px-4 py-2.5 rounded-xl text-sm transition-all duration-300 hover:scale-105
                 ${
                   project.isLive
-                    ? "border border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50"
+                    ? "border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:border-blue-300 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-white/10"
                     : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-lg hover:shadow-blue-500/25"
                 }
               `}

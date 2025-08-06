@@ -7,28 +7,28 @@ const HeroBackground: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Circles */}
         <div className="absolute top-10 left-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full border-2 border-transparent bg-gradient-to-r from-red-400/30 to-pink-400/30 animate-spin-slow opacity-30 sm:opacity-60 scale-75 sm:scale-100">
-          <div className="absolute inset-2 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-2 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         <div className="absolute top-32 right-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-transparent bg-gradient-to-br from-purple-400/40 to-blue-400/40 animate-pulse opacity-30 sm:opacity-70 scale-75 sm:scale-100">
-          <div className="absolute inset-2 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-2 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         <div className="absolute bottom-40 left-[15%] w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-transparent bg-gradient-to-tr from-cyan-400/30 to-purple-400/30 animate-bounce opacity-30 sm:opacity-60 scale-75 sm:scale-100">
-          <div className="absolute inset-2 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-2 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         <div className="absolute top-1/2 right-[10%] w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-transparent bg-gradient-to-bl from-orange-400/40 to-red-400/40 animate-spin-reverse opacity-30 sm:opacity-50 scale-75 sm:scale-100">
-          <div className="absolute inset-2 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-2 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         {/* Floating Circles */}
         <div className="absolute top-[45%] left-1/3 w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-transparent bg-gradient-to-r from-pink-400/50 to-purple-400/50 animate-float opacity-30 sm:opacity-80 scale-75 sm:scale-100">
-          <div className="absolute inset-1 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-1 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         <div className="absolute bottom-32 right-1/3 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-transparent bg-gradient-to-bl from-blue-400/40 to-indigo-400/40 animate-float-delayed opacity-30 sm:opacity-70 scale-75 sm:scale-100">
-          <div className="absolute inset-1 rounded-full bg-slate-900"></div>
+          <div className="absolute inset-1 rounded-full bg-white dark:bg-[#132238]"></div>
         </div>
 
         {/* Animated Lines */}

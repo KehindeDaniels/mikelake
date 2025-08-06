@@ -5,7 +5,7 @@ import { skillsData } from "@/data/skillsData";
 
 const Skills: React.FC = () => {
   return (
-    <div className="font-inter dark:bg-gray-dark text-white py-10 px-5">
+    <div className="font-inter dark:bg-[#101e39] text-white py-10 px-5">
       <div className="container flex flex-col sm mx-auto text-center">
         <div className="">
           <h2 className="text-sm dark:bg-light-600 bg-light-600 text-light-1000  max-w-20 mx-auto rounded-2xl py-1 mb-6">

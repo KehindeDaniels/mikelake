@@ -1,4 +1,3 @@
-// components/selectedProjects/SelectedProjects.tsx
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -26,19 +25,17 @@ const SelectedProjects: React.FC = () => {
     return (
       <div className="group relative" id="selected-projects">
         <div
-          className={`
-            flex ${
-              isReversed
-                ? "flex-col lg:flex-row-reverse"
-                : "flex-col lg:flex-row"
-            } 
-            bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 
-            overflow-hidden border border-gray-100/50 hover:border-blue-200/50
-            hover:-translate-y-1
-          `}
+          className={`flex ${
+            isReversed ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
+          }
+          rounded-3xl transition-all duration-500 overflow-hidden
+          border border-white/20 dark:border-white/10
+          bg-white/50 dark:bg-white/5 backdrop-blur-xl
+          shadow-xl shadow-gray-200/50 dark:shadow-black/30
+          hover:shadow-2xl hover:-translate-y-1`}
         >
           {/* Image Section */}
-          <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-gray-100 to-white dark:from-white/5 dark:to-white/10">
             <div className="p-6 lg:p-8 h-full flex items-center justify-center">
               <div className="relative w-full max-w-lg mx-auto">
                 <Image
@@ -52,7 +49,7 @@ const SelectedProjects: React.FC = () => {
 
                 {/* Live Badge */}
                 {project.isLive && (
-                  <div className=" absolute -top-2 -right-2 flex items-center gap-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
+                  <div className="absolute -top-2 -right-2 flex items-center gap-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg">
                     <Sparkles className="w-3 h-3 animate-bounce" />
                     <Zap className="w-3 h-3" />
                     <span>IT&#39;S LIVE</span>
@@ -66,23 +63,23 @@ const SelectedProjects: React.FC = () => {
           <div className="flex-1 flex flex-col justify-center p-8 lg:p-12 space-y-6">
             {/* Category Badge */}
             <div className="inline-flex">
-              <span className="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span className="bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
                 {project.category || "Digital Product"}
               </span>
             </div>
 
             {/* Title */}
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
               {project.title}
             </h3>
 
             {/* Description */}
-            <div className="text-gray-600 text-base lg:text-lg leading-relaxed">
+            <div className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed">
               {project.description.split(project.boldText).map((part, idx) => (
                 <span key={idx}>
                   {part}
                   {idx === 0 && (
-                    <span className="font-semibold text-gray-900">
+                    <span className="font-semibold text-gray-900 dark:text-white">
                       {project.boldText}
                     </span>
                   )}
@@ -95,7 +92,7 @@ const SelectedProjects: React.FC = () => {
               {project.tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-lg font-medium"
+                  className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-lg font-medium"
                 >
                   {tag.replace("-", "")}
                 </span>
@@ -123,14 +120,12 @@ const SelectedProjects: React.FC = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`
-                  inline-flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5
+                className={`inline-flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5
                   ${
                     project.isLive
-                      ? "border-2 border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50"
+                      ? "border-2 border-gray-200 dark:border-white/10 text-gray-700 dark:text-white hover:border-blue-300 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:bg-blue-50/20 dark:hover:bg-white/10"
                       : "bg-blue-600 hover:bg-blue-700 text-white hover:shadow-lg hover:shadow-blue-500/25"
-                  }
-                `}
+                  }`}
               >
                 <span>Case Study</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -143,17 +138,17 @@ const SelectedProjects: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-white dark:from-[#0d1a2d] dark:to-[#132238] transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Selected{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             A curated collection of projects showcasing user-centered design and
             innovative digital solutions.
           </p>
@@ -168,11 +163,11 @@ const SelectedProjects: React.FC = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 text-gray-600 text-sm">
+          <div className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
             <span>Want to see more?</span>
             <a
               href="/portfolio"
-              className="text-blue-600 hover:text-blue-700 font-semibold underline underline-offset-4 decoration-2 hover:decoration-blue-700 transition-colors"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold underline underline-offset-4 decoration-2 hover:decoration-blue-700 dark:hover:decoration-blue-300 transition-colors"
             >
               View All Projects
             </a>
