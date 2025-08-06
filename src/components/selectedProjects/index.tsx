@@ -24,7 +24,7 @@ const SelectedProjects: React.FC = () => {
     const isReversed = index % 2 !== 0;
 
     return (
-      <div className="group relative">
+      <div className="group relative" id="selected-projects">
         <div
           className={`
             flex ${

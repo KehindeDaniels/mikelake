@@ -11,7 +11,7 @@ import ContactSection from "@/components/contact";
 
 const Page: React.FC = () => {
   return (
-    <div className=" max-w-[1700px] mx-auto">
+    <div className="  mx-auto">
       <Header />
 
       {/* New Hero Section - Split into two components */}

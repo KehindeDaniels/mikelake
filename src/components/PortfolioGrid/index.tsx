@@ -64,7 +64,15 @@ const PortfolioGrid: React.FC = () => {
 
         {/* View Recent Works Button */}
         <div className="text-center mt-8">
-          <button className="text-white/60 hover:text-white font-medium text-lg transition-all duration-300 hover:underline underline-offset-4 group">
+          <button
+            onClick={() => {
+              const el = document.getElementById("selected-projects");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="text-white/60 hover:text-white font-medium text-lg transition-all duration-300 hover:underline underline-offset-4 group"
+          >
             <span className="relative">
               View recent works
               <div className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-500"></div>
