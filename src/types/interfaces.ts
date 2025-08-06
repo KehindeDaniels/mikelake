@@ -28,3 +28,18 @@ export interface ProjectItem {
   imagePath: string;
   colors: string;
 }
+
+// types/featuredProject.ts
+export interface FeaturedProject {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  caseStudyUrl: string;
+  isLive: boolean;
+  liveUrl?: string;
+  completionDate: string;
+  client?: string;
+}

@@ -1,5 +1,4 @@
 import Header from "@/components/header";
-import FeaturedProjects from "@/components/featuredProjects";
 import SelectedProjects from "@/components/selectedProjects";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
@@ -7,6 +6,7 @@ import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
+import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
 
 const Page: React.FC = () => {
   return (
@@ -22,6 +22,7 @@ const Page: React.FC = () => {
         <WorkProcess />
         <SelectedProjects />
         <ProjectCTA />
+        <FeaturedProjectsGrid />
       </div>
 
       <div id="contact" className="max-w-[1700px] mx-auto px-4 md:px-8">
