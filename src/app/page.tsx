@@ -7,6 +7,7 @@ import Hero from "@/components/hero";
 import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
 import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
+import ContactSection from "@/components/contact";
 
 const Page: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const Page: React.FC = () => {
         <SelectedProjects />
         <ProjectCTA />
         <FeaturedProjectsGrid />
+        <Skills />
+        <ContactSection />
       </div>
 
       <div id="contact" className="max-w-[1700px] mx-auto px-4 md:px-8">
