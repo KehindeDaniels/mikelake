@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Calendar, TrendingUp, Edit3, Monitor } from "lucide-react";
+import Reveal from "../Reveal"; // your reusable animation wrapper
 
 interface ProcessStep {
   id: number;
@@ -57,62 +58,73 @@ const WorkProcess: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="lg:pr-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Work Process
-            </h2>
+            <Reveal y={30}>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Work Process
+              </h2>
+            </Reveal>
 
             <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
-              <p>
-                Every project begins with understanding — the user, the problem,
-                and the goal. I believe great design is rooted in strategy and
-                empathy, not just aesthetics.
-              </p>
+              <Reveal y={20} delay={0.05}>
+                <p>
+                  Every project begins with understanding — the user, the
+                  problem, and the goal. I believe great design is rooted in
+                  strategy and empathy, not just aesthetics.
+                </p>
+              </Reveal>
 
-              <p>
-                My process is collaborative, structured, and flexible enough to
-                adapt to each product&#39;s unique needs.
-              </p>
+              <Reveal y={20} delay={0.1}>
+                <p>
+                  My process is collaborative, structured, and flexible enough
+                  to adapt to each product&#39;s unique needs.
+                </p>
+              </Reveal>
             </div>
           </div>
 
           {/* Right Process Steps */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {PROCESS_STEPS.map((step) => {
+            {PROCESS_STEPS.map((step, index) => {
               const IconComponent = step.icon;
-
               return (
-                <div
+                <Reveal
                   key={step.id}
-                  className="
-                    rounded-2xl p-6
-                    bg-white/40 dark:bg-white/5
-                    backdrop-blur-xl
-                    shadow-2xl shadow-gray-300/30 dark:shadow-black/30
-                    border border-white/20 dark:border-white/10
-                    hover:shadow-md transition-shadow duration-300
-                    relative overflow-hidden
-                    before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none
-                    before:border before:border-white/60 before:opacity-10
-                    before:bg-gradient-to-br before:from-white/60 before:to-transparent
-                    dark:before:from-white/10 dark:before:to-transparent
-                  "
+                  y={30}
+                  delay={0.15 + index * 0.08} // stagger delay
                 >
-                  {/* Icon */}
                   <div
-                    className={`${step.bgColor} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                    className={`
+                      rounded-2xl p-6
+                      bg-white/40 dark:bg-white/5
+                      backdrop-blur-xl
+                      shadow-2xl shadow-gray-300/30 dark:shadow-black/30
+                      border border-white/20 dark:border-white/10
+                      hover:shadow-md transition-shadow duration-300
+                      relative overflow-hidden
+                      before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none
+                      before:border before:border-white/60 before:opacity-10
+                      before:bg-gradient-to-br before:from-white/60 before:to-transparent
+                      dark:before:from-white/10 dark:before:to-transparent
+                      ${index % 2 === 1 ? "sm:translate-y-8" : ""}
+                    `}
                   >
-                    <IconComponent className={`w-6 h-6 ${step.iconColor}`} />
+                    {/* Icon */}
+                    <div
+                      className={`${step.bgColor} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                    >
+                      <IconComponent className={`w-6 h-6 ${step.iconColor}`} />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                      {step.id}. {step.title}
+                    </h3>
+
+                    <p className="text-gray-700 dark:text-gray-400 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    {step.id}. {step.title}
-                  </h3>
-
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>

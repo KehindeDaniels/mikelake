@@ -8,7 +8,6 @@ import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
 import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
 import ContactSection from "@/components/contact";
-import ProcessSection from "@/components/process";
 
 const Page: React.FC = () => {
   return (
