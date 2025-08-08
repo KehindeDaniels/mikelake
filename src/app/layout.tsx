@@ -1,8 +1,14 @@
 import React, { ReactNode } from "react";
 import "../styles/globals.css";
 import { Providers } from "@/context/provider";
-import { Inter, Manrope, Work_Sans } from "next/font/google";
-import LiveChat from "@/components/liveChat";
+import {
+  Space_Grotesk,
+  Inter,
+  Manrope,
+  Work_Sans,
+  Lato,
+} from "next/font/google";
+// import localFont from "next/font/local";
 
 // Add custom element type for TypeScript
 declare global {
@@ -21,6 +27,17 @@ declare global {
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-lato",
+});
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // load multiple weights
+  variable: "--font-space-grotesk",
+});
+
 const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-work-sans",
@@ -57,9 +74,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           property="og:image"
           content="https://mikelake.vercel.app/images/share.png"
         ></meta>
+        <link
+          rel="preload"
+          as="font"
+          href="/fonts/cabinet-grotesk/CabinetGrotesk-Bold.woff2"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
-        className={`${inter.variable} ${manrope.variable} ${workSans.variable}`}
+        className={`${inter.variable} ${manrope.variable} ${workSans.variable} ${lato.variable} ${spaceGrotesk.variable}`}
       >
         <Providers>
           {/* <Header /> */}

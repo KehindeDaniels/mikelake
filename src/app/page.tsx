@@ -3,7 +3,7 @@ import SelectedProjects from "@/components/selectedProjects";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
 import Footer from "@/components/footer";
-import Hero from "@/components/hero";
+import Hero from "@/components/heroComponent/hero";
 import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
 import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
