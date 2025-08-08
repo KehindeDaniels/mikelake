@@ -20,7 +20,7 @@ const FeaturedProjectCard: React.FC<FeaturedProjectCardProps> = ({
   index,
 }) => {
   return (
-    <div className="group relative">
+    <div className="group relative" id="featured-projects">
       <div className="bg-white dark:bg-white/5 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100/80 dark:border-white/10 hover:border-blue-200/60 dark:hover:border-blue-400 hover:-translate-y-2">
         {/* Image Container */}
         <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1a2a3c] dark:to-[#132238] h-64">

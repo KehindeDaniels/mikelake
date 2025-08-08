@@ -10,6 +10,9 @@ import {
   Sparkles,
   Rocket,
 } from "lucide-react";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({ weight: ["400"], subsets: ["latin"] });
 
 const SelectedProjects: React.FC = () => {
   const selectedProjects = projectsData.filter(
@@ -23,7 +26,10 @@ const SelectedProjects: React.FC = () => {
     const isReversed = index % 2 !== 0;
 
     return (
-      <div className="group relative" id="selected-projects">
+      <div
+        className={`group relative ${poppins.className} font-normal`}
+        id="selected-projects"
+      >
         <div
           className={`flex ${
             isReversed ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
@@ -75,16 +81,7 @@ const SelectedProjects: React.FC = () => {
 
             {/* Description */}
             <div className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed">
-              {project.description.split(project.boldText).map((part, idx) => (
-                <span key={idx}>
-                  {part}
-                  {idx === 0 && (
-                    <span className="font-semibold text-gray-900 dark:text-white">
-                      {project.boldText}
-                    </span>
-                  )}
-                </span>
-              ))}
+              {project.description}
             </div>
 
             {/* Tags */}
@@ -166,7 +163,7 @@ const SelectedProjects: React.FC = () => {
           <div className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
             <span>Want to see more?</span>
             <a
-              href="/portfolio"
+              href="#featured-projects"
               className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold underline underline-offset-4 decoration-2 hover:decoration-blue-700 dark:hover:decoration-blue-300 transition-colors"
             >
               View All Projects
