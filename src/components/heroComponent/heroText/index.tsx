@@ -2,10 +2,18 @@
 import React from "react";
 import { ArrowRight, UserPlus } from "lucide-react";
 import HeroMetrics from "../heroMetrics";
+import { Epilogue } from "next/font/google";
 
+const epilogue = Epilogue({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-hero",
+});
 const HeroText: React.FC = () => {
   return (
-    <section className="relative py-14 sm:py-20 min-h-[80vh] flex items-center">
+    <section
+      className={`${epilogue.className} relative py-14 sm:py-20 min-h-[80vh] flex items-center`}
+    >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         {/* Brand */}
         <div data-aos="fade-up" data-aos-delay="50" className="mb-6 sm:mb-8">
@@ -25,6 +33,8 @@ const HeroText: React.FC = () => {
             text-center text-[64px] leading-[80px] font-bold
             text-[#ECECEC]
             mb-6 sm:mb-8
+            max-w-full
+            sm:max-w-[1000px]
             max-sm:text-3xl max-sm:leading-snug
             sm:text-4xl sm:leading-[1.2]
             md:text-5xl md:leading-[1.2]
