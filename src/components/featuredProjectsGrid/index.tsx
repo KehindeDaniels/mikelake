@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { ChevronDown, Grid3X3, Sparkles } from "lucide-react";
 import { featuredProjectsData } from "@/data/featuredProjectData";
 import FeaturedProjectCard from "../featuredProjectCard";
+// import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const FILTERS = ["all", "mobile", "web", "dashboard"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -17,19 +18,19 @@ const FeaturedProjectsGrid: React.FC = () => {
     return featuredProjectsData.filter((p) => p.category === filter);
   }, [filter]);
 
-  const projectsToShow = showAll ? filtered : filtered.slice(0, 4);
+  const projectsToShow = showAll ? filtered : filtered.slice(0, 6); // 2 rows on desktop
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-[#0d1a2d] dark:via-[#132238] dark:to-[#0d1a2d] transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4 dark:bg-blue-500/10 dark:text-blue-300">
             <Grid3X3 className="w-4 h-4" />
             <span>Portfolio Showcase</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
             Featured{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
               Projects
@@ -37,8 +38,8 @@ const FeaturedProjectsGrid: React.FC = () => {
           </h2>
         </div>
 
-        {/* Filter Tabs — only All/Mobile/Web/Dashboard */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        {/* Filters: All / Mobile / Web / Dashboard */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
           {FILTERS.map((cat) => (
             <button
               key={cat}
@@ -56,19 +57,15 @@ const FeaturedProjectsGrid: React.FC = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {projectsToShow.map((project, index) => (
-            <FeaturedProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-            />
+        {/* Grid: 1 / 2 / 3 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {projectsToShow.map((project, i) => (
+            <FeaturedProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
 
         {/* Load More */}
-        {filtered.length > 4 && (
+        {filtered.length > projectsToShow.length && (
           <div className="text-center">
             <button
               onClick={() => setShowAll((s) => !s)}
