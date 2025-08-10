@@ -6,8 +6,8 @@ import Footer from "@/components/footer";
 import Hero from "@/components/heroComponent/hero";
 import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
-import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
 import ContactSection from "@/components/contact";
+import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
 
 const Page: React.FC = () => {
   return (

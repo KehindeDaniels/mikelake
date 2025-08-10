@@ -1,91 +1,92 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
-import { ChevronDown, Grid3X3, Sparkles } from "lucide-react";
-import { featuredProjectsData } from "@/data/featuredProjectData";
-import FeaturedProjectCard from "@/components/featuredProjectCard";
-// import FeaturedProjectCard from "@/components/FeaturedProjectCard";
+import React from "react";
+import { motion } from "framer-motion";
+// import GridCard from "../../GridCard";
+import { portfolioData } from "@/data/portfolioData";
+import Reveal from "../../Reveal";
+import GridCard from "./gridCard";
 
-const FILTERS = ["all", "mobile", "web", "dashboard"] as const;
-type Filter = (typeof FILTERS)[number];
+const topRow = portfolioData.slice(0, 4);
+const bottomRow = portfolioData.slice(4, 8);
 
-const FeaturedProjectsGrid: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [filter, setFilter] = useState<Filter>("all");
-
-  const filtered = useMemo(() => {
-    if (filter === "all") return featuredProjectsData;
-    return featuredProjectsData.filter((p) => p.category === filter);
-  }, [filter]);
-
-  const projectsToShow = showAll ? filtered : filtered.slice(0, 6); // 2 rows on desktop
+function ScrollingRow({
+  items,
+  direction = "left",
+  speed = 60, // seconds per loop
+}: {
+  items: typeof portfolioData;
+  direction?: "left" | "right";
+  speed?: number;
+}) {
+  const content = [...items, ...items];
+  const from = direction === "left" ? "0%" : "-50%";
+  const to = direction === "left" ? "-50%" : "0%";
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-[#0d1a2d] dark:via-[#132238] dark:to-[#0d1a2d] transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4 dark:bg-blue-500/10 dark:text-blue-300">
-            <Grid3X3 className="w-4 h-4" />
-            <span>Portfolio Showcase</span>
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex gap-8 min-w-max"
+        animate={{ x: [from, to] }}
+        transition={{ duration: speed, ease: "linear", repeat: Infinity }}
+      >
+        {content.map((project, idx) => (
+          <GridCard key={`${project.id}-${idx}`} project={project} />
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
+const PortfolioGrid: React.FC = () => {
+  return (
+    <section>
+      <div className="relative max-w-[75rem] mx-auto px-4">
+        <Reveal y={30}>
+          <div
+            className={`
+              relative rounded-3xl backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/20 p-6 overflow-hidden
+              bg-[linear-gradient(135deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.02)_100%)]
+            `}
+          >
+            {/* Top Row → moves right */}
+            <Reveal y={16}>
+              <div className="mb-6">
+                <ScrollingRow items={topRow} direction="right" speed={60} />
+              </div>
+            </Reveal>
+
+            {/* Bottom Row → moves left */}
+            <Reveal y={16} delay={0.05}>
+              <ScrollingRow items={bottomRow} direction="left" speed={60} />
+            </Reveal>
+
+            {/* Edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-900/70 via-slate-900/30 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-900/70 via-slate-900/30 to-transparent z-10" />
+
+            {/* Border overlay */}
+            <div className="absolute inset-0 rounded-3xl border border-white/5 pointer-events-none" />
           </div>
+        </Reveal>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Projects
-            </span>
-          </h2>
-        </div>
-
-        {/* Filters: All / Mobile / Web / Dashboard */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {FILTERS.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 capitalize
-                ${
-                  filter === cat
-                    ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700"
-                    : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 dark:bg-white/10 dark:text-gray-300 dark:hover:bg-white/20 dark:border-white/10 dark:hover:text-blue-400"
-                }
-              `}
+        {/* Button */}
+        <Reveal y={20} delay={0.06}>
+          <div className="text-center mt-8">
+            <a
+              href="#selected-projects"
+              className="text-white/70 hover:text-white font-medium text-lg transition-all duration-300 hover:underline underline-offset-4 group"
             >
-              {cat === "all" ? "All Projects" : cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid: 1 / 2 / 3 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {projectsToShow.map((project, i) => (
-            <FeaturedProjectCard key={project.id} project={project} index={i} />
-          ))}
-        </div>
-
-        {/* Load More */}
-        {filtered.length > projectsToShow.length && (
-          <div className="text-center">
-            <button
-              onClick={() => setShowAll((s) => !s)}
-              className="group inline-flex items-center gap-3 bg-white dark:bg-white/10 hover:bg-gray-50 dark:hover:bg-white/20 border border-gray-200 dark:border-white/10 hover:border-blue-300 dark:hover:border-blue-400 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-300 font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>
-                {showAll ? "Show Less Projects" : "Load More Projects"}
+              <span className="relative">
+                View recent works
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-500"></span>
               </span>
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-300 ${
-                  showAll ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+            </a>
           </div>
-        )}
+        </Reveal>
       </div>
     </section>
   );
 };
 
-export default FeaturedProjectsGrid;
+export default PortfolioGrid;
