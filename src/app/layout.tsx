@@ -1,6 +1,11 @@
-import React, { ReactNode } from "react";
+"use client";
+
+import React, { ReactNode, useEffect } from "react";
 import "../styles/globals.css";
 import { Providers } from "@/context/provider";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import {
   Space_Grotesk,
   Inter,
@@ -8,9 +13,8 @@ import {
   Work_Sans,
   Lato,
 } from "next/font/google";
-// import localFont from "next/font/local";
 
-// Add custom element type for TypeScript
+// Extend IntrinsicElements for call-us-selector
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -34,10 +38,9 @@ const lato = Lato({
 });
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // load multiple weights
+  weight: ["400", "500", "700"],
   variable: "--font-space-grotesk",
 });
-
 const workSans = Work_Sans({
   subsets: ["latin"],
   variable: "--font-work-sans",
@@ -48,6 +51,16 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  // Init AOS globally
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // animation speed
+      easing: "ease-out-cubic",
+      once: true, // animate only once
+      offset: 50, // trigger point
+    });
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -60,20 +73,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta
           name="description"
           content="Mike Lake - A multifaceted Product Designer showcasing innovative and creativity."
-        ></meta>
+        />
         <meta
           name="keywords"
           content="Mike Lake, Product Design, Web Development, User Experience, Portfolio"
-        ></meta>
-        <meta name="author" content="Mike Lake"></meta>
-
-        {/*  */}
-        <meta property="og:title" content="Mike Lake | Portfolio"></meta>
-        <meta property="og:url" content="https://mikelake.vercel.app/"></meta>
+        />
+        <meta name="author" content="Mike Lake" />
+        <meta property="og:title" content="Mike Lake | Portfolio" />
+        <meta property="og:url" content="https://mikelake.vercel.app/" />
         <meta
           property="og:image"
           content="https://mikelake.vercel.app/images/share.png"
-        ></meta>
+        />
         <link
           rel="preload"
           as="font"
@@ -86,7 +97,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className={`${inter.variable} ${manrope.variable} ${workSans.variable} ${lato.variable} ${spaceGrotesk.variable}`}
       >
         <Providers>
-          {/* <Header /> */}
           <main>{children}</main>
         </Providers>
       </body>

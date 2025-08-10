@@ -1,60 +1,63 @@
+// No "use client" needed
 import React from "react";
 import { ArrowRight, UserPlus } from "lucide-react";
 import HeroMetrics from "../heroMetrics";
-import Reveal from "@/components/Reveal";
-// import Reveal from "../Reveal";
 
 const HeroText: React.FC = () => {
   return (
     <section className="relative py-14 sm:py-20 min-h-[80vh] flex items-center">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        <Reveal y={10}>
-          <div className="mb-6 sm:mb-8">
-            <div className="relative inline-block">
-              <h3 className="text-white/80 text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase px-4 py-2">
-                MIKE LAKERS
-              </h3>
-              <div className="absolute inset-0 border-2 border-dotted border-white/30 rounded-lg animate-dash"></div>
-            </div>
+        {/* Brand */}
+        <div data-aos="fade-up" data-aos-delay="50" className="mb-6 sm:mb-8">
+          <div className="relative inline-block">
+            <h3 className="text-white/80 text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase px-4 py-2">
+              MIKE LAKERS
+            </h3>
+            <div className="absolute inset-0 border-2 border-dotted border-white/30 rounded-lg animate-dash"></div>
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal y={20}>
-          <h1
-            className={`
-              text-center text-[64px] leading-[80px] font-bold
-              text-[#ECECEC]
-              mb-6 sm:mb-8
-              max-sm:text-3xl max-sm:leading-snug
-              sm:text-4xl sm:leading-[1.2]
-              md:text-5xl md:leading-[1.2]
-            `}
-          >
-            Hire a Product Designer with a Founder’s Mindset —{" "}
-            <span className="bg-gradient-to-r from-red-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
-              No Equity
-            </span>{" "}
-            Required.
-          </h1>
-        </Reveal>
+        {/* Headline */}
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="120"
+          className="
+            text-center text-[64px] leading-[80px] font-bold
+            text-[#ECECEC]
+            mb-6 sm:mb-8
+            max-sm:text-3xl max-sm:leading-snug
+            sm:text-4xl sm:leading-[1.2]
+            md:text-5xl md:leading-[1.2]
+          "
+        >
+          Hire a Product Designer with a Founder’s Mindset —{" "}
+          <span className="bg-gradient-to-r from-red-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+            No Equity
+          </span>{" "}
+          Required.
+        </h1>
 
         {/* Subtext */}
-        <Reveal y={16} delay={0.05}>
-          <p className="text-center text-[20px] leading-[32px] text-white/80 mb-10 max-w-xl sm:max-w-3xl mx-auto max-sm:text-base max-sm:leading-6">
-            I dive deep into your business goals, user problems, and market
-            realities before touching a single pixel.
-          </p>
-        </Reveal>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="
+            text-center text-[20px] leading-[32px] text-white/80
+            mb-10 max-w-xl sm:max-w-3xl mx-auto
+            max-sm:text-base max-sm:leading-6
+          "
+        >
+          I dive deep into your business goals, user problems, and market
+          realities before touching a single pixel.
+        </p>
 
         {/* Metrics */}
-        <Reveal y={24}>
-          <div className="mb-10">
-            <HeroMetrics />
-          </div>
-        </Reveal>
+        <div data-aos="fade-up" data-aos-delay="260" className="mb-10">
+          <HeroMetrics />
+        </div>
 
         {/* CTA */}
-        <Reveal y={16} delay={0.08}>
+        <div data-aos="fade-up" data-aos-delay="320">
           <p className="text-white/60 text-sm sm:text-base mb-6">
             Ready to solve real problems, not just make things pretty?
           </p>
@@ -76,7 +79,7 @@ const HeroText: React.FC = () => {
               To Hire Me
             </a>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
