@@ -1,10 +1,9 @@
 // No "use client" needed
 import Image from "next/image";
-import { ArrowRight, ExternalLink, Globe } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import type { FeaturedProject } from "@/types/interfaces";
-import { Poppins, Lato } from "next/font/google";
+import { Lato } from "next/font/google";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function FeaturedProjectCard({
@@ -19,11 +18,11 @@ export default function FeaturedProjectCard({
 
   return (
     <article
-      className={`${lato.className} relative overflow-hidden rounded-2xl
+      className={`${lato.className} group relative overflow-hidden rounded-2xl
         bg-white/70 dark:bg-white/5
         backdrop-blur-sm
         border border-gray-200 dark:border-white/10
-        shadow-sm hover:shadow-md transition-shadow
+        shadow-sm hover:shadow-md transition-shadow duration-300
       `}
     >
       {/* Live badge */}
@@ -49,7 +48,7 @@ export default function FeaturedProjectCard({
             src={image}
             alt={title}
             fill
-            className="object-cover"
+            className="object-cover transform transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-105"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority={index !== undefined && index < 2}
           />
@@ -58,7 +57,7 @@ export default function FeaturedProjectCard({
 
       {/* Content */}
       <div className="p-5">
-        {/* Category (uppercase, muted) */}
+        {/* Category */}
         <div className="text-[11px] sm:text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400 mb-2">
           {category}
         </div>
@@ -75,7 +74,7 @@ export default function FeaturedProjectCard({
 
         {/* Actions */}
         <div className="flex flex-wrap gap-3">
-          {/* Case Study (primary outlined pill) */}
+          {/* Case Study */}
           <a
             href={caseStudyUrl}
             target="_blank"
@@ -92,7 +91,7 @@ export default function FeaturedProjectCard({
             <ArrowRight className="w-4 h-4" />
           </a>
 
-          {/* Live Site (filled) */}
+          {/* Live Site */}
           {isLive && liveUrl && (
             <a
               href={liveUrl}
