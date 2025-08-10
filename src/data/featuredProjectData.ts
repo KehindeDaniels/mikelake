@@ -38,7 +38,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "web",
     description:
       "HR operations on blockchain with transparent records and modular workflows.",
-    image: "/images/blockchain-hr.jpg",
+    image: "/images/10thgen.png",
     tags: ["Web UI/UX", "Blockchain", "HR"],
     caseStudyUrl:
       "https://www.behance.net/gallery/231970265/Block-Chain-HR-Sollition",
@@ -74,7 +74,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "web",
     description:
       "Modern e-commerce with conversion-oriented product discovery and checkout.",
-    image: "/images/pureselect-ecommerce.png",
+    image: "/images/pureselect.png",
     tags: ["Web UI/UX", "E-commerce"],
     caseStudyUrl:
       "https://www.behance.net/gallery/213551663/Pureselect-E-Commerce-Design",
@@ -111,7 +111,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "web",
     description:
       "Clean marketing site showcasing services and work with a crisp visual system.",
-    image: "/images/creatiwise.jpg",
+    image: "/images/creatiwise.png",
     tags: ["Web UI/UX", "Marketing"],
     caseStudyUrl:
       "https://www.behance.net/gallery/212730529/Creatiwise-Website-Design",
@@ -134,7 +134,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "mobile",
     description:
       "High-fidelity mobile flows and presentation assets for stakeholder review.",
-    image: "/images/wecycle-presentation.jpg",
+    image: "/images/wecycle.jpg",
     tags: ["Mobile UI/UX", "Presentation"],
     caseStudyUrl:
       "https://www.behance.net/gallery/210357605/Wecycle-App-Presentation",
@@ -146,7 +146,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "web",
     description:
       "Accessible learning platform with structured modules and progress tracking.",
-    image: "/images/mdth-tech-learning.jpg",
+    image: "/images/10thgen.png",
     tags: ["Web UI/UX", "EdTech"],
     caseStudyUrl:
       "https://www.behance.net/gallery/209613077/A-case-study-for-Making-A-Difference-Tech-Hub-%28MDTH%29",
@@ -158,7 +158,7 @@ export const featuredProjectsData: FeaturedProject[] = [
     category: "web",
     description:
       "Academic and learning website with clear navigation and resource access.",
-    image: "/images/debissilia.jpg",
+    image: "/images/debissilia.png",
     tags: ["Web UI/UX", "Education"],
     caseStudyUrl:
       "https://www.behance.net/gallery/232022601/Academic-and-Learning-website",
