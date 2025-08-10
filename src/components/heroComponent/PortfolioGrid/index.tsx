@@ -10,13 +10,13 @@ const bottomRow = portfolioData.slice(4, 8);
 function ScrollingRow({
   items,
   direction = "left",
-  speed = 60, // seconds per loop
+  speed = 60,
 }: {
   items: typeof portfolioData;
   direction?: "left" | "right";
   speed?: number;
 }) {
-  const content = [...items, ...items]; // doubled for seamless loop
+  const content = [...items, ...items];
   const dirClass = direction === "left" ? "scroll-left" : "scroll-right";
 
   return (
@@ -42,14 +42,19 @@ const PortfolioGrid: React.FC = () => {
           data-aos-delay="50"
           className="relative rounded-3xl backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/20 p-6 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.02)_100%)]"
         >
-          {/* Top Row → moves right */}
-          <div data-aos="fade-up" data-aos-delay="100" className="mb-6">
-            <ScrollingRow items={topRow} direction="right" speed={60} />
+          {/* Desktop/Tablet → 2 scrolling rows */}
+          <div className="hidden md:block">
+            <div data-aos="fade-up" data-aos-delay="100" className="mb-6">
+              <ScrollingRow items={topRow} direction="right" speed={60} />
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <ScrollingRow items={bottomRow} direction="left" speed={60} />
+            </div>
           </div>
 
-          {/* Bottom Row → moves left */}
-          <div data-aos="fade-up" data-aos-delay="200">
-            <ScrollingRow items={bottomRow} direction="left" speed={60} />
+          {/* Mobile → 1 scrolling row */}
+          <div className="md:hidden">
+            <ScrollingRow items={portfolioData} direction="left" speed={60} />
           </div>
 
           {/* Edge fades */}
