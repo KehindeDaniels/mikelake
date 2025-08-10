@@ -1,8 +1,11 @@
 // No "use client" needed
 import Image from "next/image";
-import { ExternalLink, Globe } from "lucide-react";
+import { ArrowRight, ExternalLink, Globe } from "lucide-react";
 import type { FeaturedProject } from "@/types/interfaces";
-// import type { FeaturedProject } from "@/types/featuredProject";
+import { Poppins, Lato } from "next/font/google";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
+const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function FeaturedProjectCard({
   project,
@@ -16,13 +19,12 @@ export default function FeaturedProjectCard({
 
   return (
     <article
-      className="
-        relative overflow-hidden rounded-2xl
+      className={`${lato.className} relative overflow-hidden rounded-2xl
         bg-white/70 dark:bg-white/5
         backdrop-blur-sm
         border border-gray-200 dark:border-white/10
         shadow-sm hover:shadow-md transition-shadow
-      "
+      `}
     >
       {/* Live badge */}
       {isLive && liveUrl && (
@@ -56,11 +58,9 @@ export default function FeaturedProjectCard({
 
       {/* Content */}
       <div className="p-5">
-        {/* Category tag */}
-        <div className="mb-2">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-600/10 text-blue-700 dark:text-blue-300 dark:bg-blue-500/10 capitalize">
-            {category}
-          </span>
+        {/* Category (uppercase, muted) */}
+        <div className="text-[11px] sm:text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400 mb-2">
+          {category}
         </div>
 
         {/* Title */}
@@ -74,28 +74,36 @@ export default function FeaturedProjectCard({
         </p>
 
         {/* Actions */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
+          {/* Case Study (primary outlined pill) */}
           <a
             href={caseStudyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium
-                       bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10
-                       hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700
-                       dark:hover:bg-white/20 dark:hover:border-blue-400 dark:hover:text-blue-300
-                       transition-colors"
+            className="
+              inline-flex items-center gap-2
+              rounded-full px-5 py-3 text-sm font-semibold
+              border-2 border-blue-500 text-blue-600
+              hover:bg-blue-50 dark:hover:bg-blue-500/10
+              transition-colors
+            "
           >
-            <ExternalLink className="w-4 h-4" />
             Case Study
+            <ArrowRight className="w-4 h-4" />
           </a>
 
+          {/* Live Site (filled) */}
           {isLive && liveUrl && (
             <a
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium
-                         bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              className="
+                inline-flex items-center gap-2
+                rounded-full px-5 py-3 text-sm font-semibold
+                bg-blue-600 text-white hover:bg-blue-700
+                transition-colors
+              "
             >
               <Globe className="w-4 h-4" />
               Live Site

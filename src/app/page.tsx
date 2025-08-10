@@ -7,7 +7,7 @@ import Hero from "@/components/heroComponent/hero";
 import WorkProcess from "@/components/workProcess";
 import ProjectCTA from "@/components/projectCTA";
 import ContactSection from "@/components/contact";
-import FeaturedProjectsGrid from "@/components/featuredProjectsGrid";
+import FeaturedProjectsGrid from "@/components/featured/featuredProjectsGrid";
 
 const Page: React.FC = () => {
   return (
