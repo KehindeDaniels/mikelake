@@ -8,7 +8,6 @@ const HeroText: React.FC = () => {
   return (
     <section className="relative py-14 sm:py-20 min-h-[80vh] flex items-center">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        {/* Brand */}
         <Reveal y={10}>
           <div className="mb-6 sm:mb-8">
             <div className="relative inline-block">
@@ -20,7 +19,6 @@ const HeroText: React.FC = () => {
           </div>
         </Reveal>
 
-        {/* Headline */}
         <Reveal y={20}>
           <h1
             className={`

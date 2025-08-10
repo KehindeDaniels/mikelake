@@ -1,88 +1,179 @@
-// data/featuredProjectsData.ts
+// import type { FeaturedProject } from "@/types/featuredProject";
 
 import type { FeaturedProject } from "@/types/interfaces";
 
+/**
+ * NOTE: Update the `image` paths to real thumbnails when you have them.
+ * For now they point to /images/<slug>.jpg as placeholders.
+ */
+
 export const featuredProjectsData: FeaturedProject[] = [
   {
-    id: "fp-1",
-    title: "FinTech Mobile Banking App",
-    category: "MOBILE UI/UX",
+    id: "fp-property-search",
+    title: "Property Search",
+    category: "web",
     description:
-      "Revolutionary mobile banking experience with AI-powered insights, seamless transactions, and personalized financial management tools.",
-    image: "/assets/featured/banking-app.jpg",
-    tags: ["React Native", "UI/UX Design", "Fintech", "Mobile"],
-    caseStudyUrl: "/case-studies/fintech-banking",
-    isLive: true,
-    liveUrl: "https://banking-demo.example.com",
-    completionDate: "2024",
-    client: "SecureBank Corp",
-  },
-  {
-    id: "fp-2",
-    title: "E-Commerce Platform Redesign",
-    category: "WEB UI/UX",
-    description:
-      "Complete redesign of a multi-vendor marketplace focusing on user experience, conversion optimization, and modern design principles.",
-    image: "/assets/featured/ecommerce-platform.jpg",
-    tags: ["Next.js", "E-commerce", "Web Design", "UX Research"],
-    caseStudyUrl: "/case-studies/ecommerce-redesign",
-    isLive: true,
-    liveUrl: "https://marketplace-demo.example.com",
-    completionDate: "2024",
-    client: "ShopFlow Inc",
-  },
-  {
-    id: "fp-3",
-    title: "Healthcare Dashboard System",
-    category: "DASHBOARD UI/UX",
-    description:
-      "Comprehensive healthcare management dashboard for medical professionals with patient tracking, analytics, and appointment scheduling.",
-    image: "/assets/featured/healthcare-dashboard.jpg",
-    tags: ["React", "Healthcare", "Dashboard", "Data Visualization"],
-    caseStudyUrl: "/case-studies/healthcare-dashboard",
+      "Smart, human-centered property search with clean discovery and comparison flows.",
+    image: "/images/property-search.png",
+    tags: ["Web UI/UX", "Search", "Real Estate"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/231971981/Property-Search-Website",
     isLive: false,
-    completionDate: "2024",
-    client: "MedTech Solutions",
   },
   {
-    id: "fp-4",
-    title: "AI-Powered Learning Platform",
-    category: "EDTECH UI/UX",
+    id: "fp-health-predict",
+    title: "Health Predict",
+    category: "mobile",
     description:
-      "Next-generation e-learning platform with AI tutoring, progress tracking, and interactive content delivery for enhanced learning outcomes.",
-    image: "/assets/featured/learning-platform.jpg",
-    tags: ["Vue.js", "EdTech", "AI Integration", "Learning"],
-    caseStudyUrl: "/case-studies/ai-learning-platform",
-    isLive: true,
-    liveUrl: "https://learn-ai-demo.example.com",
-    completionDate: "2024",
-    client: "EduFuture Ltd",
-  },
-  {
-    id: "fp-5",
-    title: "Smart City Management Hub",
-    category: "ENTERPRISE UI/UX",
-    description:
-      "Centralized smart city management platform for monitoring infrastructure, traffic, energy consumption, and citizen services.",
-    image: "/assets/featured/smart-city.jpg",
-    tags: ["Angular", "IoT", "Smart City", "Enterprise"],
-    caseStudyUrl: "/case-studies/smart-city-hub",
+      "Mobile health tracking with predictive cues and clear, friendly charts.",
+    image: "/images/health-predict.png",
+    tags: ["Mobile UI/UX", "Health", "Predictive"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/231971601/Health-Predict-Mobile-App",
     isLive: false,
-    completionDate: "2023",
-    client: "CityTech Municipal",
   },
   {
-    id: "fp-6",
-    title: "Creative Portfolio Website",
-    category: "PORTFOLIO UI/UX",
+    id: "fp-blockchain-hr",
+    title: "Blockchain HR Platform",
+    category: "web",
     description:
-      "Stunning portfolio website for a creative agency featuring interactive animations, case studies, and immersive project showcases.",
-    image: "/assets/featured/creative-portfolio.jpg",
-    tags: ["Next.js", "Portfolio", "Creative", "Animations"],
-    caseStudyUrl: "/case-studies/creative-portfolio",
+      "HR operations on blockchain with transparent records and modular workflows.",
+    image: "/images/blockchain-hr.jpg",
+    tags: ["Web UI/UX", "Blockchain", "HR"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/231970265/Block-Chain-HR-Sollition",
+    isLive: false,
+  },
+  {
+    id: "fp-qr-code",
+    title: "QR Code Generator",
+    category: "web",
+    description:
+      "Create, customize, and manage QR codes for products, events, and personal use.",
+    image: "/images/qr-code.png",
+    tags: ["Web UI/UX", "Generator", "Branding"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/231971023/QR-Code-Generation-platform",
+    isLive: false,
+  },
+  {
+    id: "fp-car-sell",
+    title: "Car Sell",
+    category: "web",
+    description:
+      "A fast, safe, and simple car selling experience with trust-centered UX.",
+    image: "/images/car-sell.png",
+    tags: ["Web UI/UX", "Marketplace", "Automotive"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/231965493/Car-Selling-Website",
+    isLive: false,
+  },
+  {
+    id: "fp-pureselect-ecommerce",
+    title: "Pureselect E-commerce",
+    category: "web",
+    description:
+      "Modern e-commerce with conversion-oriented product discovery and checkout.",
+    image: "/images/pureselect-ecommerce.png",
+    tags: ["Web UI/UX", "E-commerce"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/213551663/Pureselect-E-Commerce-Design",
     isLive: true,
-    liveUrl: "https://creative-demo.example.com",
-    completionDate: "2024",
-    client: "DesignStudio Creative",
+    liveUrl: "https://example-live-pureselect.com", // optional; remove if none
+  },
+  {
+    id: "fp-inventory-dashboard",
+    title: "Inventory Dashboard",
+    category: "dashboard",
+    description:
+      "Inventory insights with real-time status, alerts, and clear data visualization.",
+    image: "/images/inventory-dashboard.jpg",
+    tags: ["Dashboard", "Analytics", "Data Viz"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/212568343/Inventory-Management-Dashboard",
+    isLive: false,
+  },
+  {
+    id: "fp-gearbox-ecommerce",
+    title: "Gear Box E-commerce",
+    category: "web",
+    description:
+      "E-commerce for parts with structured navigation and robust filtering.",
+    image: "/images/gearbox-ecommerce.jpg",
+    tags: ["Web UI/UX", "E-commerce"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/209871683/Gearbox-E-commerce-Website",
+    isLive: false,
+  },
+  {
+    id: "fp-creatiwise",
+    title: "Creatiwise",
+    category: "web",
+    description:
+      "Clean marketing site showcasing services and work with a crisp visual system.",
+    image: "/images/creatiwise.jpg",
+    tags: ["Web UI/UX", "Marketing"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/212730529/Creatiwise-Website-Design",
+    isLive: false,
+  },
+  {
+    id: "fp-wecycle",
+    title: "Wecycle",
+    category: "mobile",
+    description:
+      "Eco-conscious app with gamified habits and easy drop-off discovery.",
+    image: "/images/wecycle.jpg",
+    tags: ["Mobile UI/UX", "Sustainability"],
+    caseStudyUrl: "https://www.behance.net/gallery/208158883/Wecycle-App",
+    isLive: false,
+  },
+  {
+    id: "fp-wecycle-presentation",
+    title: "Wecycle Presentation",
+    category: "mobile",
+    description:
+      "High-fidelity mobile flows and presentation assets for stakeholder review.",
+    image: "/images/wecycle-presentation.jpg",
+    tags: ["Mobile UI/UX", "Presentation"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/210357605/Wecycle-App-Presentation",
+    isLive: false,
+  },
+  {
+    id: "fp-mdth-tech-learning",
+    title: "Tech Learning (MDTH)",
+    category: "web",
+    description:
+      "Accessible learning platform with structured modules and progress tracking.",
+    image: "/images/mdth-tech-learning.jpg",
+    tags: ["Web UI/UX", "EdTech"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/209613077/A-case-study-for-Making-A-Difference-Tech-Hub-%28MDTH%29",
+    isLive: false,
+  },
+  {
+    id: "fp-debissilia",
+    title: "Debissilia",
+    category: "web",
+    description:
+      "Academic and learning website with clear navigation and resource access.",
+    image: "/images/debissilia.jpg",
+    tags: ["Web UI/UX", "Education"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/232022601/Academic-and-Learning-website",
+    isLive: false,
+  },
+  {
+    id: "fp-stylehub",
+    title: "StyleHub",
+    category: "mobile",
+    description:
+      "Fashion shopping app with curated feeds and simple, fast checkout.",
+    image: "/images/stylehub.jpg",
+    tags: ["Mobile UI/UX", "E-commerce"],
+    caseStudyUrl:
+      "https://www.behance.net/gallery/200844327/StyleHub-E-commerce-Fahion-App",
+    isLive: false,
   },
 ];

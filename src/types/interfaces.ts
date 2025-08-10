@@ -33,6 +33,7 @@ export interface ProjectItem {
 export interface FeaturedProject {
   id: string;
   title: string;
+  /** One of: "mobile" | "web" | "dashboard" */
   category: string;
   description: string;
   image: string;
@@ -40,6 +41,6 @@ export interface FeaturedProject {
   caseStudyUrl: string;
   isLive: boolean;
   liveUrl?: string;
-  completionDate: string;
+  completionDate?: string;
   client?: string;
 }
