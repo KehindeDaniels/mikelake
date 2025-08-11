@@ -37,7 +37,7 @@ const ProjectCard: React.FC<Props> = ({ project, index }) => {
         rounded-3xl transition-all duration-500 overflow-hidden
         border border-white/20 dark:border-white/10
         bg-white/50 dark:bg-white/5 backdrop-blur-xl
-        shadow-xl shadow-gray-200/50 dark:shadow-black/30
+        shadow-xl shadow-gray-200/50 dark:shadow-none
         hover:shadow-2xl hover:-translate-y-1`}
       >
         {/* Image Section */}
