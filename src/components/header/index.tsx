@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-[10000] backdrop-blur-lg bg-black/30 border-b border-dark-300 border-opacity-20 py-4 sm:py-0">
+      <header className="sticky top-0 z-[10000] backdrop-blur-lg border-b border-dark-300 border-opacity-20 py-4 sm:py-0">
         <nav className="max-w-[90%] sm:max-w-[1500px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-12 sm:h-16">
           {/* Logo */}
           <div>
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
                 <a
                   key={link.label}
                   href={link.url}
-                  className="text-dark-300 hover:text-gray-300 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                  className="text-slate-600 dark:text-dark-300 hover:text-gray-300 inline-flex items-center px-1 pt-1 text-sm font-medium"
                 >
                   {link.label}
                 </a>

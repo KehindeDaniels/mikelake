@@ -11,7 +11,7 @@ import FeaturedProjectsGrid from "@/components/featured/featuredProjectsGrid";
 
 const Page: React.FC = () => {
   return (
-    <div className="  mx-auto">
+    <div className="  mx-auto bg-slate-900">
       <Header />
 
       {/* New Hero Section - Split into two components */}
