@@ -21,7 +21,10 @@ const FeaturedProjectsGrid: React.FC = () => {
   const projectsToShow = showAll ? filtered : filtered.slice(0, 6); // 2 rows on desktop
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-[#0d1a2d] dark:via-[#132238] dark:to-[#0d1a2d] transition-colors duration-500">
+    <section
+      id="featured-projects"
+      className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-[#0d1a2d] dark:via-[#132238] dark:to-[#0d1a2d] transition-colors duration-500"
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
