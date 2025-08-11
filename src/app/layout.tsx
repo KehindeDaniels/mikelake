@@ -13,6 +13,7 @@ import {
   Work_Sans,
   Lato,
 } from "next/font/google";
+import Loader from "@/components/Loader";
 
 // Extend IntrinsicElements for call-us-selector
 declare global {
@@ -96,6 +97,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <body
         className={`${inter.variable} ${manrope.variable} ${workSans.variable} ${lato.variable} ${spaceGrotesk.variable}`}
       >
+        <Loader />
         <Providers>
           <main>{children}</main>
         </Providers>
