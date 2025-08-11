@@ -134,7 +134,15 @@ const Skills: React.FC = () => {
         {/* Header Section with Enhanced Design */}
         <div className="mb-20">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50/80 dark:bg-gradient-to-r dark:from-blue-500/10 dark:to-purple-500/10 backdrop-blur-sm border border-blue-200/50 dark:border-white/10 text-blue-600 dark:text-blue-300 px-6 py-3 rounded-full mb-8 text-sm font-medium">
+          <div
+            className="inline-flex items-center gap-2 
+  bg-blue-50/80 
+  dark:bg-gradient-to-r dark:from-blue-900/40 dark:to-purple-900/40 
+  backdrop-blur-sm 
+  border border-blue-200/50 dark:border-white/10 
+  text-blue-600 dark:text-blue-300 
+  px-6 py-3 rounded-full mb-8 text-sm font-medium"
+          >
             <Star className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
             Design Arsenal
             <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse ml-2"></div>
