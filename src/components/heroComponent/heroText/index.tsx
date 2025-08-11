@@ -2,12 +2,19 @@
 import React from "react";
 import { ArrowRight, UserPlus } from "lucide-react";
 import HeroMetrics from "../heroMetrics";
-import { Epilogue } from "next/font/google";
+import { Epilogue, Lato } from "next/font/google";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
   weight: ["600", "700"],
   variable: "--font-hero",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-lato",
+  display: "swap",
 });
 const HeroText: React.FC = () => {
   return (
@@ -30,7 +37,7 @@ const HeroText: React.FC = () => {
           data-aos="fade-up"
           data-aos-delay="120"
           className="
-            text-center text-[64px] leading-[80px] font-bold
+            text-center text-[64px] leading-[80px] font-normal
             text-[#ECECEC]
             mb-6 sm:mb-8
             max-w-full
@@ -51,11 +58,11 @@ const HeroText: React.FC = () => {
         <p
           data-aos="fade-up"
           data-aos-delay="200"
-          className="
+          className={`${lato.className}
             text-center text-[20px] leading-[32px] text-white/80
             mb-10 max-w-xl sm:max-w-3xl mx-auto
-            max-sm:text-base max-sm:leading-6
-          "
+            max-sm:text-base max-sm:leading-6 font-normal
+          `}
         >
           I dive deep into your business goals, user problems, and market
           realities before touching a single pixel.
