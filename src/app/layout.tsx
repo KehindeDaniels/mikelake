@@ -56,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     AOS.init({
       duration: 800, // animation speed
       easing: "ease-out-cubic",
-      once: true, // animate only once
+      once: false, // animate only once
       offset: 50, // trigger point
     });
   }, []);
